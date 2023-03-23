@@ -4,24 +4,26 @@ const Schema = mongoose.Schema;
 
 const companySchema = new Schema (
     {
-        fullName: {
+        name: {
             type: String,
+            required: true,          
+        },
+        description:{
+            type:String,
             required: true,
-            // enum:['Julius Hibbert', 'Gregory House', 'Meredith Grey', 'Nick Riviera']
         },
-        age: { type: Number, required: true },
-        gender: { 
-            type: String, 
-            required: true,
-            enum:['Male', 'Female']
+        logo: { 
+            type:String , 
+            required: true 
         },
-        phoneNumber: { type: String },
-        email: { type: String, required: true  },
-        insurance: { 
-            type: [String],
-            // required: true,
-            enum:['Sanitas', 'Asisa', 'Adeslas', 'DKV', 'Maphre', 'Otros']
+        listOffers: { 
+            type:String , 
+            required: true 
         },
+        numberEmployees:{
+            type:Number,
+        },
+        
         developers: [{ type:mongoose.Schema.Types.ObjectId, ref: "Developer" }],
         user: [{ type:mongoose.Schema.Types.ObjectId, ref: "User" }],
     },
