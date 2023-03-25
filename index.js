@@ -17,39 +17,12 @@ const PORT = process.env.PORT || 3000;
 // Routes config
 const developersRoutes = require("./routes/developer.routes");
 const companiesRoutes = require("./routes/company.routes");
-const userRoutes = require("./routes/user.routes");
+const openiaRoutes = require("./routes/openai.routes");
 
 //CORS CONFIG
-const whitelist = [
-  "http://localhost:4200", 
-  "http://localhost:63022", 
-  "https://final-project-angular.vercel.app/"
-]; //white list consumers
-var corsOptions = {
-  origin: function (origin, callback) {
-    if (whitelist.indexOf(origin) !== -1) {
-      callback(null, true);
-    } else {
-      callback(null, false);
-    }
-  },
-  methods: ["GET", "PUT", "POST", "DELETE", "OPTIONS"],
-  optionsSuccessStatus: 200, // some legacy browsers (IE11, various SmartTVs) choke on 204
-  credentials: true, //Credentials are cookies, authorization headers or TLS client certificates.
-  allowedHeaders: [
-    "Content-Type",
-    "Authorization",
-    "X-Requested-With",
-    "device-remember-token",
-    "Access-Control-Allow-Origin",
-    "Origin",
-    "Accept",
-  ],
-};
-// const insuranceRoutes = require('./routes/insurance.routes');
+app.use(cors());
 
 app.get("/", (req, res) => {
-  // res.send('<h1>Hello World!</h1>');
   res.sendFile(__dirname + "/index.html");
 });
 
@@ -58,26 +31,15 @@ app.set("view engine", "ejs");
 // Middlewares config
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-// app.use((req, res, next) => {
-//   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE');
-//   res.header('Access-Control-Allow-Credentials', true);
-//   res.header('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
-//   res.header('Access-Control-Allow-Origin', '*');
-//   next();
-// });
-app.use(cors(corsOptions));
-// app.use(
-//   cors({
-//     origin: whitelist,
-//   })
-// );
-app.set("secretKey", "nodeRestApi"); // Config JWT
+
+// Config JWT
+app.set("secretKey", "nodeRestApi"); 
 
 //Routes
-app.use("/developers", developersRoutes);
-app.use("/companies", companiesRoutes);
-// app.use('/insurances', insuranceRoutes);
-app.use("/users", userRoutes);
+app.use("/v1/developers", developersRoutes);
+app.use("/v1/companies", companiesRoutes);
+
+app.use("/v1/gpt-3", openiaRoutes);
 
 // Control error
 app.use("*", (req, res, next) => {
