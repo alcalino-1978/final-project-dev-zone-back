@@ -14,7 +14,7 @@ const companiesList = [
     logo:"https://logos-download.com/wp-content/uploads/2022/01/Minsait_Logo.png" ,
     listOffers: [],
     numberEmployees: 46000,
-    developers: [], 
+    developers: ["641de1809187e794a8e7e30f","641de1809187e794a8e7e311"], 
     },
     {
     email:"ab@b.com" ,
@@ -24,7 +24,7 @@ const companiesList = [
     logo:"https://rhmagazine.pt/wp-content/uploads/2021/03/inetum_rhmagazine_online.jpg" ,
     listOffers: [] ,
     numberEmployees:40000,
-    developers: [],   
+    developers: ["641de1809187e794a8e7e310"],   
     },
     {
     email:"ac@b.com" ,
@@ -34,7 +34,7 @@ const companiesList = [
     logo: "https://isvisoft.com/wp-content/uploads/Isvisoft.png" ,
     listOffers:[] ,
     numberEmployees:12,
-    developers: [],   
+    developers: ["641de1809187e794a8e7e312"],   
     },
     {
     email:"af@b.com" ,
