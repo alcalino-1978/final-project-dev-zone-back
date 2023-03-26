@@ -25,7 +25,6 @@ const register = async (req, res, next) => {
     } else {
       const userDb = await newUser.save();
       //Pnt. mejora: autenticar directamente al usuario
-      newUser.password = null;
       //creamos el token con el id y el name del user
       const token = jwt.sign(
         {
@@ -49,19 +48,20 @@ const register = async (req, res, next) => {
   }
 }
 
-const login = async (req, res, next) => {
+const login = (entity) = async (req, res, next) => {
   try {
+    const { email } = req.params;
     //Buscamos al user en bd
-    const userInfo = await User.findOne({ email: req.body.email })
+    const entityInfo = await entity.findOne({ email });
     //Comparamos la contraseña
     if (bcrypt.compareSync(req.body.password, userInfo.password)) {
       //eliminamos la contraseña del usuario
-      userInfo.password = null
+      entityInfo.password = null
       //creamos el token con el id y el name del user
       const token = jwt.sign(
         {
-          id: userInfo._id,
-          email: userInfo.email
+          id: entityInfo._id,
+          email: entityInfo.email
         },
         req.app.get("secretKey"),
         { expiresIn: "1h" }
@@ -69,8 +69,8 @@ const login = async (req, res, next) => {
       //devolvemos el usuario y el token.
       return res.json({
         status: 200,
-        message: 'Login con éxito',
-        data: { user: userInfo, token: token },
+        message: 'Successful login',
+        data: { user: entityInfo, token: token },
       });
     } else {
       return res.json({ status: 400, message: 'Bad request', data: null });
