@@ -18,6 +18,7 @@ const PORT = process.env.PORT || 3000;
 const developersRoutes = require("./routes/developer.routes");
 const companiesRoutes = require("./routes/company.routes");
 const openiaRoutes = require("./routes/openai.routes");
+const userRoutes = require("./routes/user.routes");
 
 //CORS CONFIG
 app.use(cors());
@@ -38,7 +39,7 @@ app.set("secretKey", "nodeRestApi");
 //Routes
 app.use("/v1/developers", developersRoutes);
 app.use("/v1/companies", companiesRoutes);
-
+app.use("/v1/users", userRoutes);
 app.use("/v1/gpt-3", openiaRoutes);
 
 // Control error
