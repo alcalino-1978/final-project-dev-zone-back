@@ -4,12 +4,19 @@ const { isAuth } = require("../auth/jwt");
 const Company = require("../models/Company");
 const Developer = require("../models/Developer");
 
+const bcrypt = require("bcrypt");
+// Cargamos el módulo de jsonwebtoken
+const jwt = require("jsonwebtoken");
+const { register, login, isAuth, logout, deleteUser } = require("../auth/jwt");
+
+const fileMiddleware = require('../middlewares/file.middleware');
+
 const router = express.Router();
 
 // viewAll=true
 router.get("/", async (req, res, next) => {
+  let companies = [];  
   try {
-    let companies = [];
     companies = await Company.find().populate("developers", "fullName cv");
     //const employee = await Employee.find();
     return res.status(200).json(companies);
@@ -28,7 +35,7 @@ router.get("/:id", async (req, res, next) => {
       "developers",
       "fullName cv"
     );
-    console.log(company);
+    //console.log(company);
     if (company) {
       return res.status(200).json(company);
     } else {
@@ -40,15 +47,17 @@ router.get("/:id", async (req, res, next) => {
 });
 
 // Post Company
-router.post("/", async (req, res, next) => {
+router.post("/",[fileMiddleware.upload.single('logo'), fileMiddleware.uploadToCloudinary] async (req, res, next) => {
   //console.log(req.body);
+  const pwdHash = await bcrypt.hash(req.body.password, 10);
+  const cloudinaryUrl = req.file_url ? req.file_url : null;
   const {email, password, name, description, logo, listOffers, numberEmployees} = req.body;
   const company = {
     email,
     password,
     name,
     description,
-    logo,
+    logo: cloudinaryUrl,
     listOffers,
     numberEmployees,
   };
@@ -56,12 +65,28 @@ router.post("/", async (req, res, next) => {
     console.log(company);
     const newCompany = new Company(company);
     const exists = await Company.exists({ name: company.name });
+   // const result = await Developer.exists({ email: newDeveloper.email });
     if (exists) {
       return res.status(404).json("This company name already exists");
     } else {
       console.log(company.name);
       const createdCompany = await newCompany.save();
-      return res.status(201).json(createdCompany);
+      newDeveloper.password = null;
+      //creamos el token con el id y el name del user
+      const token = jwt.sign(
+        {
+          id: newCompany._id,
+          email: newCompany.email
+        },
+        req.app.get("secretKey"),
+        { expiresIn: "1h" }
+      );
+      //return res.status(201).json(createdCompany);
+      return res.json({
+        status: 201,
+        message: 'User registered and logged in correctly',
+        data: { createdCompany, token: token }
+      });
     }
   } catch (error) {
     next(error);
@@ -70,7 +95,7 @@ router.post("/", async (req, res, next) => {
 
 // Delete Company
 //[isAuth],
-router.delete("/:id",  async (req, res, next) => {
+router.delete("/:id",[isAuth],  async (req, res, next) => {
   try {
     const { id } = req.params;
     const nameCompany = await Company.findById(id).lean();
@@ -92,7 +117,7 @@ router.delete("/:id",  async (req, res, next) => {
 
 // Put Update by ID
 //[isAuth],
-router.put("/:id",  async (req, res, next) => {
+router.put("/:id", [isAuth], async (req, res, next) => {
   try {
     const { id } = req.params;
     const companyModify = new Company(req.body);
@@ -106,6 +131,6 @@ router.put("/:id",  async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-  
+
 });
 module.exports = router;
