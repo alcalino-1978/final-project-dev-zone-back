@@ -7,9 +7,10 @@ const companySchema = new Schema(
     email: { type: String, required: true },
     password: {
       type: String,
-      required: () => {
+      required: true,
+     /* required: () => {
         return this.registered === true;
-      },
+      },*/
     },
     name: {
       type: String,
