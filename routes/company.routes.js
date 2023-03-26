@@ -7,7 +7,7 @@ const Developer = require("../models/Developer");
 const bcrypt = require("bcrypt");
 // Cargamos el módulo de jsonwebtoken
 const jwt = require("jsonwebtoken");
-const { register, login, isAuth, logout, deleteUser } = require("../auth/jwt");
+
 
 const fileMiddleware = require('../middlewares/file.middleware');
 
@@ -47,7 +47,7 @@ router.get("/:id", async (req, res, next) => {
 });
 
 // Post Company
-router.post("/",[fileMiddleware.upload.single('logo'), fileMiddleware.uploadToCloudinary] async (req, res, next) => {
+router.post("/",[fileMiddleware.upload.single('logo'), fileMiddleware.uploadToCloudinary] ,async (req, res, next) => {
   //console.log(req.body);
   const pwdHash = await bcrypt.hash(req.body.password, 10);
   const cloudinaryUrl = req.file_url ? req.file_url : null;
@@ -71,7 +71,7 @@ router.post("/",[fileMiddleware.upload.single('logo'), fileMiddleware.uploadToCl
     } else {
       console.log(company.name);
       const createdCompany = await newCompany.save();
-      newDeveloper.password = null;
+      newCompany.password = null;
       //creamos el token con el id y el name del user
       const token = jwt.sign(
         {
@@ -99,7 +99,7 @@ router.delete("/:id",[isAuth],  async (req, res, next) => {
   try {
     const { id } = req.params;
     const nameCompany = await Company.findById(id).lean();
-    console.log(nameCompany.fullName);
+    console.log(nameCompany.name);
 
     // Para borrar las referencias del Company en todos los pacientes
     await Developer.updateMany(
@@ -109,15 +109,14 @@ router.delete("/:id",[isAuth],  async (req, res, next) => {
     await Company.findByIdAndDelete(id); // Borrado del company en la colección principal
     return res
       .status(200)
-      .json(`Company ${nameCompany.fullName} has been deleted sucessfully!`);
+      .json(`Company ${nameCompany.name} has been deleted sucessfully!`);
   } catch (error) {
     next(error);
   }
 });
 
-// Put Update by ID
-//[isAuth],
-router.put("/:id", [isAuth], async (req, res, next) => {
+// PATCH Update by ID
+router.patch("/:id",[isAuth], async (req, res, next) => {
   try {
     const { id } = req.params;
     const companyModify = new Company(req.body);
@@ -131,6 +130,23 @@ router.put("/:id", [isAuth], async (req, res, next) => {
   } catch (error) {
     next(error);
   }
-
 });
+
+// PUT Update by ID
+router.put("/:id",[isAuth], async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const companyModify = new Company(req.body);
+    companyModify._id = id;
+    const company = await Company.findByIdAndUpdate(id, companyModify);
+    if (company) {
+      return res.status(200).json(companyModify);
+    } else {
+      return res.status(404).json("Company by this ID it is not found");
+    }
+  } catch (error) {
+    next(error);
+  }
+});
+
 module.exports = router;
