@@ -2,7 +2,11 @@ const express = require('express');
 const mongoose = require('mongoose');
 const Developer = require('../models/Developer');
 const Company = require('../models/Company');
-const { isAuth } = require('../auth/jwt');
+
+const bcrypt = require("bcrypt");
+// Cargamos el módulo de jsonwebtoken
+const jwt = require("jsonwebtoken");
+const { register, login, isAuth, logout, deleteUser } = require("../auth/jwt");
 
 const fileMiddleware = require('../middlewares/file.middleware');
 const router = express.Router();
@@ -13,19 +17,7 @@ router.get('/',  async (req, res, next) => {
   const { illnessQuery, insuranceQuery } = req.query;
   let developers = [];
   try {
-    if (illnessQuery) {
-      developers = await Developer.find({illness: illnessQuery});
-      if (developers.length === 0) {
-        return res.status(404).json(`${illnessQuery} not exist in Database`);
-      }
-    } else if(insuranceQuery) {
-      developers = await Developer.find({insurance: insuranceQuery});
-      if (developers.length === 0) {
-        return res.status(404).json(`${insuranceQuery} not exist in Database`);
-      }
-    } else {
-      developers = await Developer.find().populate('company');
-    }
+    developers = await Developer.find();
     return res.status(200).json(developers);
   } catch {
     return next(err);
@@ -51,39 +43,62 @@ router.get('/:id', async (req, res, next) => {
 
 })
 
-// Post developer
+
+// Post Creation developer
 router.post('/', [fileMiddleware.upload.single('image'), fileMiddleware.uploadToCloudinary], async (req, res, next) => {
+  console.log(req.file_url)
+  const pwdHash = await bcrypt.hash(req.body.password, 10);
   const cloudinaryUrl = req.file_url ? req.file_url : null;
-  const { fullName, age, gender, phoneNumber, email, insurance, registered, password, illness, company = 'Julius Hibbert' } = req.body;
+  const { fullName, age, phoneNumber, email, password, cv, salary, languages, portfolio, experience, hardSkills, softSkills, typeJob, movility } = req.body;
   const developer = {
     fullName,
     age,
-    gender,
     phoneNumber,
     email,
-    insurance,
-    registered,
     password,
-    illness,
-    company,
-    image: cloudinaryUrl
+    image: cloudinaryUrl,
+    cv,
+    salary,
+    languages,
+    portfolio,
+    experience,
+    hardSkills,
+    softSkills,
+    typeJob,
+    movility
   }
   try {
     const newDeveloper = new Developer(developer);
-
+    
+    newDeveloper.password = pwdHash;
     // Check If developer exists
-    const result = await Developer.exists({ fullName: newDeveloper.fullName });
+    const result = await Developer.exists({ email: newDeveloper.email });
     if (result) {
-      return res.status(404).json('This developer fullName already exists');
+      return res.status(404).json('This developer email already exists');
     } else {
       console.log(newDeveloper.fullName);
       const createdDeveloper = await newDeveloper.save();
-      return res.status(201).json(createdDeveloper);
+      newDeveloper.password = null;
+      //creamos el token con el id y el name del user
+      const token = jwt.sign(
+        {
+          id: newDeveloper._id,
+          email: newDeveloper.email
+        },
+        req.app.get("secretKey"),
+        { expiresIn: "1h" }
+      );
+      return res.json({
+        status: 201,
+        message: 'User registered and logged in correctly',
+        data: { createdDeveloper, token: token }
+      });
     }
   } catch (error) {
     next(error);
   }
 })
+
 
 // Delete developer
 router.delete('/:id', [isAuth], async (req, res, next) => {

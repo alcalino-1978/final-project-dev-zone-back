@@ -8,13 +8,8 @@ const developerSchema = new Schema (
         age: { type: Number, required: true },
         phoneNumber: { type: String, required: true },
         email: { type: String, required: true },
-        password: { 
-            type: String,
-            required: () => {
-                return this.registered === true;
-            }
-         },
-        photo: { type: String, required: true },
+        password: { type: String, required: true },
+        image: { type: String, required: true },
         cv: { type: String },
         salary: { type: String, required: true },
         languages: { type: [String], required: true },
@@ -25,7 +20,7 @@ const developerSchema = new Schema (
         education: { type: [String], required: true },
         typeJob: { type: String, required: true, enum: ['Full Remote', 'Hybrid', 'Presential'] },
         movility: { type: Boolean },
-        company: { type:mongoose.Schema.Types.ObjectId, ref: "Company" },
+        // company: { type:mongoose.Schema.Types.ObjectId, ref: "Company" },
     },
     {
         timestamps: true
