@@ -13,19 +13,7 @@ router.get('/',  async (req, res, next) => {
   const { illnessQuery, insuranceQuery } = req.query;
   let developers = [];
   try {
-    if (illnessQuery) {
-      developers = await Developer.find({illness: illnessQuery});
-      if (developers.length === 0) {
-        return res.status(404).json(`${illnessQuery} not exist in Database`);
-      }
-    } else if(insuranceQuery) {
-      developers = await Developer.find({insurance: insuranceQuery});
-      if (developers.length === 0) {
-        return res.status(404).json(`${insuranceQuery} not exist in Database`);
-      }
-    } else {
-      developers = await Developer.find().populate('company');
-    }
+    developers = await Developer.find();
     return res.status(200).json(developers);
   } catch {
     return next(err);
@@ -51,22 +39,28 @@ router.get('/:id', async (req, res, next) => {
 
 })
 
+
 // Post developer
 router.post('/', [fileMiddleware.upload.single('image'), fileMiddleware.uploadToCloudinary], async (req, res, next) => {
+  console.log(req.file_url)
+
   const cloudinaryUrl = req.file_url ? req.file_url : null;
-  const { fullName, age, gender, phoneNumber, email, insurance, registered, password, illness, company = 'Julius Hibbert' } = req.body;
+  const { fullName, age, phoneNumber, email, password, cv, salary, languages, experience, hardSkills, softSkills, typeJob, movility } = req.body;
   const developer = {
     fullName,
     age,
-    gender,
     phoneNumber,
     email,
-    insurance,
-    registered,
     password,
-    illness,
-    company,
-    image: cloudinaryUrl
+    image: cloudinaryUrl,
+    cv,
+    salary,
+    languages,
+    experience,
+    hardSkills,
+    softSkills,
+    typeJob,
+    movility
   }
   try {
     const newDeveloper = new Developer(developer);
