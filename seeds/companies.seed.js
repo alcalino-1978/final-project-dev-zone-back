@@ -39,7 +39,7 @@ const companiesList = [
     {
     email:"af@b.com" ,
     password:"1234",
-      name:"t-systems" ,
+    name:"t-systems" ,
     description:"T-Systems ofrece soluciones integrales e integradas con las que acelera la transformación digital de empresas de todos los sectores y del sector público.",
     logo:"https://w7.pngwing.com/pngs/656/1009/png-transparent-logo-t-systems-do-brasil-ltda-font-embrace-purple-text-logo-thumbnail.png" ,
     listOffers:[] ,
@@ -61,6 +61,18 @@ mongoose
     if (allCompanies.length) {
         await Company.collection.drop();
     }
+    const allDevelopers = await Develpers.find();
+    companiesDocuments.forEach(async company => {
+      const random = Math.floor(Math.random() * allDevelopers.length);
+      const developer = allDevelopers[random];
+      company.developers = developer.id;
+
+      await Company.findByIdAndUpdate(
+        developer._id,
+        { $push: { companies: company._id , } },
+        { new: true }
+        ); 
+    });
 })
 .catch((err) => console.log(`Error deleting data: ${err}`))
 .then(async () => {
