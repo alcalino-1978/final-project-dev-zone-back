@@ -25,7 +25,7 @@ const jobOffersList = [
       <li>Strong knowledge of HTML, CSS, and responsive design</li>
       <li>Experience with integrating front-end and back-end code.</li>
     </ul>`, 
-    salary_range: {
+    salaryRange: {
         min: 25000,
         max: 30000,
     },
@@ -66,7 +66,7 @@ const jobOffersList = [
     exciting field, we encourage you to apply for this training opportunity. Upon successful 
     completion of the program, you will have the skills and experience necessary to become a 
     Full Stack Developer and join our team.</p>`, 
-    salary_range: {
+    salaryRange: {
         min: 15000,
         max: 19000,
     },
@@ -100,7 +100,7 @@ const jobOffersList = [
       <li>Experience with databases such as MySQL, MongoDB, or PostgreSQL/li>
       <li>Experience with RESTful APIs and microservices architecture</li>
     </ul>`, 
-    salary_range: {
+    salaryRange: {
         min: 80000,
         max: 100000,
     },
@@ -134,7 +134,7 @@ const jobOffersList = [
       <li>Experience with software development methodologies, such as Agile or Scrum</li>
     </ul>
     `, 
-    salary_range: {
+    salaryRange: {
         min: 47000,
         max: 50000,
     },
