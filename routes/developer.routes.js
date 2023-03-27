@@ -49,7 +49,7 @@ router.post('/', [fileMiddleware.upload.single('image'), fileMiddleware.uploadTo
   console.log(req.file_url)
   const pwdHash = await bcrypt.hash(req.body.password, 10);
   const cloudinaryUrl = req.file_url ? req.file_url : null;
-  const { fullName, age, phoneNumber, email, password, cv, salary, languages, portfolio, experience, hardSkills, softSkills, typeJob, movility } = req.body;
+  const { fullName, age, phoneNumber, email, password, cv, salaryRange, languages, portfolio, experience, hardSkills, softSkills, typeJob, movility } = req.body;
   const developer = {
     fullName,
     age,
@@ -58,7 +58,7 @@ router.post('/', [fileMiddleware.upload.single('image'), fileMiddleware.uploadTo
     password,
     image: cloudinaryUrl,
     cv,
-    salary,
+    salaryRange,
     languages,
     portfolio,
     experience,
@@ -121,6 +121,29 @@ router.delete('/:id', [isAuth], async (req, res, next) => {
   }
 })
 
+// Patch Update by ID
+router.patch('/:id', [isAuth],  async (req, res) => {
+  const { id } = req.params;
+  try {
+    // Buscar el desarrollador por id
+    const developer = await Developer.findById(id);
+    if (!developer) {
+      return res.status(404).send({ error: 'Developer by this ID it is not found' });
+    }
+    // Actualizar los campos recibidos en req.body
+    Object.keys(req.body).forEach((key) => {
+      if (key !== '_id') {
+        developer[key] = req.body[key];
+      }
+    });
+    await developer.save();
+    res.send(developer);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: 'Error in update field' });
+  }
+});
+
 // Put Update by ID
 
 router.put('/:id', [isAuth], async (req, res, next) => {
@@ -139,20 +162,5 @@ router.put('/:id', [isAuth], async (req, res, next) => {
   }
 })
 
-router.patch('/:id', [isAuth], async (req, res, next) => {
-  try {
-    const { id } = req.params;
-    const developerModify = new Developer(req.body);
-    developerModify._id = id;
-    const developer = await Developer.findByIdAndUpdate(id, developerModify);
-    if (developer) {
-      return res.status(200).json(developerModify);
-    } else {
-      return res.status(404).json('Developer by this ID it is not found');
-    }
-  } catch (error) {
-    next(error);
-  }
-})
 
 module.exports = router;

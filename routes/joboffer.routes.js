@@ -49,7 +49,7 @@ router.post('/', async (req, res, next) => {
     title,
     description,
     company,
-    salary_range,
+    salaryRange,
     hiring,
     offerStatus,
     typeJob,
@@ -60,7 +60,7 @@ router.post('/', async (req, res, next) => {
     title,
     description,
     company,
-    salary_range,
+    salaryRange,
     hiring,
     offerStatus,
     typeJob,
@@ -96,6 +96,29 @@ router.delete('/:id', async (req, res, next) => {
   }
 })
 
+// Patch Update by ID
+router.patch('/:id', [isAuth],  async (req, res) => {
+  const { id } = req.params;
+  try {
+    // Buscar el desarrollador por id
+    const jobOffer = await JobOffer.findById(id);
+    if (!jobOffer) {
+      return res.status(404).send({ error: 'jobOffer by this ID it is not found' });
+    }
+    // Actualizar los campos recibidos en req.body
+    Object.keys(req.body).forEach((key) => {
+      if (key !== '_id') {
+        jobOffer[key] = req.body[key];
+      }
+    });
+    await jobOffer.save();
+    res.send(jobOffer);
+  } catch (error) {
+    console.error(error);
+    res.status(500).send({ error: 'Error in update field' });
+  }
+});
+
 // Put Update by ID
 
 router.put('/:id', async (req, res, next) => {
@@ -113,24 +136,5 @@ router.put('/:id', async (req, res, next) => {
     next(error);
   }
 })
-
-// Patch Update by ID
-
-router.patch('/:id', async (req, res, next) => {
-  try {
-    const { id } = req.params;
-    const modifyOffer = new JobOffer(req.body);
-    modifyOffer._id = id;
-    const offer = await JobOffer.findByIdAndUpdate(id, modifyOffer);
-    if (offer) {
-      return res.status(200).json(`Offer with ID: ${modifyOffer.id} has been updated sucessfully!'`);
-    } else {
-      return res.status(404).json('Offer by this ID it is not found');
-    }
-  } catch (error) {
-    next(error);
-  }
-})
-
 
 module.exports = router;

@@ -10,9 +10,12 @@ const developersList = [
       phoneNumber: "982-948-8357",
       email: "mlinskill@example.com",
       password: "1234",
-      photo: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
+      image: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
       cv: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
-      salary: "25000-35000",
+      salaryRange: {
+        min: 25000,
+        max: 30000,
+      },
       languages: ['Español', "English", "Deutsche"],
       experience: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       hardSkills: ["HTML","CSS","JavaScript","Angular","ReactJs","PHP","Symphony","MySql","NodeJs"],
@@ -27,9 +30,12 @@ const developersList = [
       phoneNumber: "982-948-8357",
       email: "mlinskill@example.com",
       password: "1234",
-      photo: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
+      image: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
       cv: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
-      salary: "25000-35000",
+      salaryRange: {
+        min: 35000,
+        max: 50000,
+      },
       languages: ['Español', "English", "Deutsche"],
       experience: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       hardSkills: ["HTML","CSS","JavaScript","Angular","ReactJs","PHP","Symphony","MySql","NodeJs"],
@@ -44,9 +50,12 @@ const developersList = [
       phoneNumber: "982-948-8357",
       email: "ameachan@example.com",
       password: "1234",
-      photo: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
+      image: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
       cv: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
-      salary: "25000-35000",
+      salaryRange: {
+        min: 45000,
+        max: 70000,
+      },
       languages: ['Español', "English", "Deutsche"],
       experience: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       hardSkills: ["HTML","CSS","JavaScript","Angular","ReactJs","PHP","Symphony","MySql","NodeJs"],
@@ -61,9 +70,12 @@ const developersList = [
       phoneNumber: "982-948-8357",
       email: "wmate@example.com",
       password: "1234",
-      photo: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
+      image: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
       cv: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
-      salary: "25000-35000",
+      salaryRange: {
+        min: 35000,
+        max: 50000,
+      },
       languages: ['Español', "English", "Deutsche"],
       experience: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       hardSkills: ["HTML","CSS","JavaScript","Angular","ReactJs","PHP","Symphony","MySql","NodeJs"],
@@ -78,9 +90,12 @@ const developersList = [
       phoneNumber: "982-948-8357",
       email: "svarnam@example.com",
       password: "1234",
-      photo: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
+      image: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
       cv: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
-      salary: "25000-35000",
+      salaryRange: {
+        min: 35000,
+        max: 50000,
+      },
       languages: ['Español', "English", "Deutsche"],
       experience: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       hardSkills: ["HTML","CSS","JavaScript","Angular","ReactJs","PHP","Symphony","MySql","NodeJs"],
@@ -95,9 +110,12 @@ const developersList = [
       phoneNumber: "982-948-8357",
       email: "classells@example.com",
       password: "1234",
-      photo: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
+      image: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
       cv: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
-      salary: "25000-35000",
+      salaryRange: {
+        min: 35000,
+        max: 50000,
+      },
       languages: ['Español', "English", "Deutsche"],
       experience: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       hardSkills: ["HTML","CSS","JavaScript","Angular","ReactJs","PHP","Symphony","MySql","NodeJs"],
@@ -112,9 +130,12 @@ const developersList = [
       phoneNumber: "982-948-8357",
       email: "pbutlin@example.com",
       password: "1234",
-      photo: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
+      image: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
       cv: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
-      salary: "25000-35000",
+      salaryRange: {
+        min: 55000,
+        max: 60000,
+      },
       languages: ['Español', "English", "Deutsche"],
       experience: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
       hardSkills: ["HTML","CSS","JavaScript","Angular","ReactJs","PHP","Symphony","MySql","NodeJs"],
@@ -139,18 +160,18 @@ mongoose
     if (allDevelopers.length) {
         await Developer.collection.drop();
     }
-    const allCompanies = await Company.find();
-    developersDocuments.forEach(async developer => {
-      const random = Math.floor(Math.random() * allCompanies.length);
-      const company = allCompanies[random];
-      developer.company = company.id;
+    // const allCompanies = await Company.find();
+    // developersDocuments.forEach(async developer => {
+    //   const random = Math.floor(Math.random() * allCompanies.length);
+    //   const company = allCompanies[random];
+    //   developer.company = company.id;
 
-      await Company.findByIdAndUpdate(
-        company._id,
-        { $push: { developers: developer._id , } },
-        { new: true }
-        ); 
-    });
+    //   await Company.findByIdAndUpdate(
+    //     company._id,
+    //     { $push: { developers: developer._id , } },
+    //     { new: true }
+    //     ); 
+    // });
 
 })
 .catch((err) => console.log(`Error deleting data: ${err}`))

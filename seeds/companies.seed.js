@@ -4,6 +4,7 @@ const { DB_URL } = require('../utils/db');
 
 
 const Company = require("../models/Company");
+const Developer = require("../models/Developer");
 
 const companiesList = [
     {
@@ -61,7 +62,7 @@ mongoose
     if (allCompanies.length) {
         await Company.collection.drop();
     }
-    const allDevelopers = await Develpers.find();
+    const allDevelopers = await Developer.find();
     companiesDocuments.forEach(async company => {
       const random = Math.floor(Math.random() * allDevelopers.length);
       const developer = allDevelopers[random];

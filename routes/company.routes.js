@@ -116,19 +116,25 @@ router.delete("/:id",[isAuth],  async (req, res, next) => {
 });
 
 // PATCH Update by ID
-router.patch("/:id",[isAuth], async (req, res, next) => {
+router.patch('/:id', [isAuth],  async (req, res) => {
+  const { id } = req.params;
   try {
-    const { id } = req.params;
-    const companyModify = new Company(req.body);
-    companyModify._id = id;
-    const company = await Company.findByIdAndUpdate(id, companyModify);
-    if (company) {
-      return res.status(200).json(companyModify);
-    } else {
-      return res.status(404).json("Company by this ID it is not found");
+    // Buscar el desarrollador por id
+    const company = await Company.findById(id);
+    if (!company) {
+      return res.status(404).send({ error: 'Company by this ID it is not found' });
     }
+    // Actualizar los campos recibidos en req.body
+    Object.keys(req.body).forEach((key) => {
+      if (key !== '_id') {
+        company[key] = req.body[key];
+      }
+    });
+    await company.save();
+    res.send(company);
   } catch (error) {
-    next(error);
+    console.error(error);
+    res.status(500).send({ error: 'Error in update field' });
   }
 });
 
@@ -136,6 +142,7 @@ router.patch("/:id",[isAuth], async (req, res, next) => {
 router.put("/:id",[isAuth], async (req, res, next) => {
   try {
     const { id } = req.params;
+    console.log(req.body, id);
     const companyModify = new Company(req.body);
     companyModify._id = id;
     const company = await Company.findByIdAndUpdate(id, companyModify);
