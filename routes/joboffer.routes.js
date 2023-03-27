@@ -114,4 +114,23 @@ router.put('/:id', async (req, res, next) => {
   }
 })
 
+// Patch Update by ID
+
+router.patch('/:id', async (req, res, next) => {
+  try {
+    const { id } = req.params;
+    const modifyOffer = new JobOffer(req.body);
+    modifyOffer._id = id;
+    const offer = await JobOffer.findByIdAndUpdate(id, modifyOffer);
+    if (offer) {
+      return res.status(200).json(`Offer with ID: ${modifyOffer.id} has been updated sucessfully!'`);
+    } else {
+      return res.status(404).json('Offer by this ID it is not found');
+    }
+  } catch (error) {
+    next(error);
+  }
+})
+
+
 module.exports = router;
