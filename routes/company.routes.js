@@ -51,13 +51,14 @@ router.post("/",[fileMiddleware.upload.single('logo'), fileMiddleware.uploadToCl
   //console.log(req.body);
   const pwdHash = await bcrypt.hash(req.body.password, 10);
   const cloudinaryUrl = req.file_url ? req.file_url : null;
-  const {email, password, name, description, logo, listOffers, numberEmployees} = req.body;
+  const {email, password, name, description, logo, cif, listOffers, numberEmployees} = req.body;
   const company = {
     email,
     password,
     name,
     description,
     logo: cloudinaryUrl,
+    cif,
     listOffers,
     numberEmployees,
   };

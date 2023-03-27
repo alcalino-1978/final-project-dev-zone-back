@@ -24,6 +24,10 @@ const companySchema = new Schema(
       type: String,
       required: true,
     },
+    cif:{
+      type: String,
+      required: true,
+    },
     listOffers: {
       type: [String],
       required: true,

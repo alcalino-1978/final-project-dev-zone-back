@@ -6,7 +6,6 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "joboffer": "node seeds/companies.seed.js && node seeds/joboffer.seed.js",
     "loadSeed": "node seeds/developers.seed.js && node seeds/companies.seed.js && node seeds/joboffer.seed.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
