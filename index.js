@@ -12,7 +12,8 @@ const { connect } = require("./utils/db");
 // Server config
 connect();
 const app = express();
-const PORT = process.env.PORT || 3000;
+//const PORT = process.env.PORT || 3000;
+const PORT =  3000;
 
 // Routes config
 const developersRoutes = require("./routes/developer.routes");
