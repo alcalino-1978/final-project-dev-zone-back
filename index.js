@@ -18,6 +18,7 @@ const PORT =  3000;
 // Routes config
 const developersRoutes = require("./routes/developer.routes");
 const companiesRoutes = require("./routes/company.routes");
+const jobOfferRoutes = require("./routes/joboffer.routes");
 const openiaRoutes = require("./routes/openai.routes");
 const userRoutes = require("./routes/user.routes");
 
@@ -40,6 +41,7 @@ app.set("secretKey", "nodeRestApi");
 //Routes
 app.use("/v1/developers", developersRoutes);
 app.use("/v1/companies", companiesRoutes);
+app.use("/v1/joboffers", jobOfferRoutes);
 app.use("/v1/users", userRoutes);
 app.use("/v1/gpt-3", openiaRoutes);
 
