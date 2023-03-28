@@ -2,7 +2,6 @@ const express = require("express");
 const app = express();
 const router = express.Router();
 const bodyParser = require("body-parser");
-const natural = require('natural');
 const relevantKeywords = require('../utils/relevantKeywordsAI.js');
 
 // const bodyParser = require('body-parser');
