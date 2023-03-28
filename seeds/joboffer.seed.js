@@ -36,7 +36,12 @@ const jobOffersList = [
     offerStatus: true,
     typeJob: 'Full Remote' ,
     vacancies: 2,
-    applicants: []
+    applicants: [],
+    keywords: [
+      'front end',
+      'angular',
+      'react'
+    ]
     },
    {
     title: 'Full-Stack Developer',
@@ -77,7 +82,12 @@ const jobOffersList = [
     offerStatus: true,
     typeJob: 'Presential' ,
     vacancies: 5,
-    applicants: []
+    applicants: [],
+    keywords: [
+      'full stack',
+      'angular',
+      'django'
+    ]
     },
     {
     title: 'Back-End Developer',
@@ -111,7 +121,12 @@ const jobOffersList = [
     offerStatus: true,
     typeJob: 'Hybrid' ,
     vacancies: 1,
-    applicants: []
+    applicants: [],
+    keywords: [
+      'back end',
+      'python',
+      'node'
+    ]
     },
    {
     title: 'Software Engineer',
@@ -145,7 +160,12 @@ const jobOffersList = [
     offerStatus: false,
     typeJob: 'Full Remote' ,
     vacancies: 2,
-    applicants: []
+    applicants: [],
+    keywords: [
+      'software engineer',
+      'java',
+      'c++'
+    ]
     },
 ];
 

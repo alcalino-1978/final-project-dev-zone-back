@@ -23,7 +23,8 @@ const jobSchema = new Schema(
         offerStatus: { type: Boolean, required: true },
         typeJob: { type: String, required: true, enum: ['Full Remote', 'Hybrid', 'Presential'] },
         vacancies: { type: Number, required: true, min: 0 },
-        applicants: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Developer' }]
+        applicants: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Developer' }],
+        keywords : { type: [String], required: true }
     },
     {
         timestamps: true,
