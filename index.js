@@ -3,6 +3,7 @@ const path = require("path");
 const cors = require("cors");
 const bodyParser = require("body-parser");
 require("dotenv").config();
+const fs = require('fs');
 
 // Auth
 require("jsonwebtoken"); // Requerimos nuestro archivo de configuración
