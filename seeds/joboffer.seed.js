@@ -6,15 +6,7 @@ const JobOffer = require("../models/JobOffer");
 const jobOffersList = [
    {
     title: 'Front-End Developer',
-    description: `Are you a Front-End expert, proud of your work and looking 
-    for a new challenge that you are passionate about? Do you want to be a part 
-    of a talented and innovative development team that is focused on delivering 
-    high-quality solutions to clients? If so, we invite you to join our team!
-
-    If you can develop and maintain responsive web applications using modern front-end frameworks, collaborate 
-    with other engineers and stakeholders to understand requirements and develop solutions while writing in a 
-    clean, efficient, and maintainable code using best practices... Well, good news!! You're perfect for this
-    offer!
+    description: `Are you a Front-End expert, proud of your work and looking for a new challenge that you are passionate about? Do you want to be a part of a talented and innovative development team that is focused on delivering high-quality solutions to clients? If so, we invite you to join If you can develop and maintain responsive web applications using modern front-end frameworks, colwith other engineers and stakeholders to understand requirements and develop solutions while wriclean, efficient, and maintainable code using best practices... Well, good news!! You're perfect offer!
   
     The requirementsa are that you have a:
 
@@ -44,10 +36,7 @@ const jobOffersList = [
     },
    {
     title: 'Full-Stack Developer',
-    description: `We are on the look out for a talented and motivated individual with a passion for 
-    web development to join our training program for Full Stack Developers. In this role, 
-    you will receive comprehensive training in front-end and back-end web development, as 
-    well as exposure to the latest technologies and best practices in the field.
+    description: `We are on the look out for a talented and motivated individual with a pasweb development to join our training program for Full Stack Developers. In thyou will receive comprehensive training in front-end and back-end web developwell as exposure to the latest technologies and best practices in the field.
     
     The person we're looking for has to:
 
@@ -64,10 +53,7 @@ const jobOffersList = [
       - Passion for web development and eagerness to learn.
       - Excellent communication and teamwork skills.
     
-    If you are passionate about web development and looking to jumpstart your career in this 
-    exciting field, we encourage you to apply for this training opportunity. Upon successful 
-    completion of the program, you will have the skills and experience necessary to become a 
-    Full Stack Developer and join our team!!`, 
+    If you are passionate about web development and looking to jumpstart your career inexciting field, we encourage you to apply for this training opportunity. Upon succecompletion of the program, you will have the skills and experience necessary to becFull Stack Developer and join our team!!`, 
     salaryRange: {
         min: 15000,
         max: 19000,
@@ -88,10 +74,7 @@ const jobOffersList = [
     },
     {
     title: 'Back-End Developer',
-    description: `We are seeking a talented and experienced Back-End 
-    Developer to join our growing team. In this role, you will be responsible 
-    for designing, developing, and maintaining the back-end of our web applications, 
-    ensuring they are fast, efficient, and scalable.
+    description: `We are seeking a talented and experienced Back-EDeveloper to join our growing team. In this role, you will be responsibfor designing, developing, and maintaining the back-end of our web applicationensuring they are fast, efficient, and scalable.
     
     Responsibilities:
   
@@ -126,10 +109,7 @@ const jobOffersList = [
     },
    {
     title: 'Software Engineer',
-    description: `We are seeking a highly motivated and talented software engineer 
-    to join our team. As a software engineer, you will work closely with our development 
-    team to design, develop, and maintain software applications and systems that meet 
-    the needs of our clients.
+    description: `We are seeking a highly motivated and talented software engineer to join our team. As a software engineer, you will work closely with our development team to design, develop, and maintain software applications and systems that meet the needs of our clients.
     
     Responsibilities:
     
