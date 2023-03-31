@@ -14,7 +14,7 @@ router.get('/', async (req, res, next) => {
     let joboffers = [];
       joboffers = await JobOffer.find()
         .populate('company', 'name logo numberEmployees')
-        .populate('applicants', 'fullName photo');
+        .populate('applicants', 'fullName image');
     return res.status(200).json(joboffers);
   } catch (error) {
     return next(error);
@@ -30,7 +30,7 @@ router.get('/:id', async (req, res, next) => {
     console.log(idObject);
     const joboffer = await JobOffer.findById(idObject)
     .populate('company', 'name logo numberEmployees')
-    .populate('applicants', 'fullName photo');
+    .populate('applicants', 'fullName image');
     console.log(joboffer);
     if (joboffer) {
       return res.status(200).json(joboffer);

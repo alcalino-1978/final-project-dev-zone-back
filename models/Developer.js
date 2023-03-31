@@ -25,7 +25,7 @@ const developerSchema = new Schema (
         education: { type: [String], required: true },
         typeJob: { type: String, required: true, enum: ['Full Remote', 'Hybrid', 'Presential'] },
         movility: { type: Boolean },
-        jobOffers: { type: [String] },
+        jobOffers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'JobOffer' }],
     },
     {
         timestamps: true

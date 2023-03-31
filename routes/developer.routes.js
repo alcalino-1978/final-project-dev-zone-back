@@ -17,7 +17,13 @@ router.get('/',  async (req, res, next) => {
   const { illnessQuery, insuranceQuery } = req.query;
   let developers = [];
   try {
-    developers = await Developer.find();
+    developers = await Developer.find()
+    .populate({
+      path: 'jobOffers', select: 'title company offerStatus',
+      populate: {
+        path: 'company', select: 'name logo numberEmployees'
+      }
+    });
     return res.status(200).json(developers);
   } catch {
     return next(err);
@@ -30,7 +36,13 @@ router.get('/:id', async (req, res, next) => {
   const { id } = req.params;
   try {
     const idObject = mongoose.Types.ObjectId(id);
-    const developer = await Developer.findById(idObject);
+    const developer = await Developer.findById(idObject).lean()
+    .populate({
+      path: 'jobOffers', select: 'title company offerStatus',
+      populate: {
+        path: 'company', select: 'name logo numberEmployees'
+      }
+    });
     if (developer) {
       return res.status(200).json(developer);
     } else {
@@ -122,7 +134,7 @@ router.delete('/:id', [isAuth], async (req, res, next) => {
 })
 
 // Patch Update by ID
-router.patch('/:id', [isAuth],  async (req, res) => {
+router.patch('/:id',  async (req, res) => {
   const { id } = req.params;
   try {
     // Buscar el desarrollador por id
