@@ -3,8 +3,8 @@ const bcrypt = require("bcrypt");
 // Cargamos el módulo de jsonwebtoken
 const jwt = require("jsonwebtoken");
 
-
 const login = async (req, res, next) => {
+
   try {
     const { entity, email } = req.params;
     const Entity = require(`../models/${entity}`);

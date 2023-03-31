@@ -2,10 +2,6 @@ const mongoose = require('mongoose');
 
 const Schema = mongoose.Schema;
 
-const salaryRangeSchema = new Schema({
-    min: { type: Number, required: true },
-    max: { type: Number, required: true },
-  });
 
 const developerSchema = new Schema (
     {
@@ -16,7 +12,8 @@ const developerSchema = new Schema (
         password: { type: String, required: true },
         image: { type: String, required: true },
         cv: { type: String },
-        salaryRange: { type: salaryRangeSchema, required: true },
+        salaryRangeMin: { type: Number, required: true },
+        salaryRangeMax: { type: Number, required: true },
         languages: { type: [String], required: true },
         portfolio: { type: [String], required: true },
         experience: { type: String, required: true },
