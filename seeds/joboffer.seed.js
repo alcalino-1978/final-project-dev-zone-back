@@ -6,25 +6,16 @@ const JobOffer = require("../models/JobOffer");
 const jobOffersList = [
    {
     title: 'Front-End Developer',
-    description: `<p>Are you a Front-End expert, proud of your work and looking 
-    for a new challenge that you are passionate about? Do you want to be a part 
-    of a talented and innovative development team that is focused on delivering 
-    high-quality solutions to clients? If so, we invite you to join our team!</p>
-    
-    <h3>Responsibilities:</h3>
-    <ul>
-      <li>Develop and maintain responsive web applications using modern front-end frameworks..</li>
-      <li>Collaborate with other engineers and stakeholders to understand requirements and develop solutions</li>
-      <li>Write clean, efficient, and maintainable code using best practices</li>
-    </ul>
-    
-    <h3>Requirements:</h3>
-    <ul>
-      <li>Bachelor's degree in Computer Science or a related field</li>
-      <li>Proficiency in modern JavaScript frameworks such as React, Angular, or Vue.js.</li>
-      <li>Strong knowledge of HTML, CSS, and responsive design</li>
-      <li>Experience with integrating front-end and back-end code.</li>
-    </ul>`, 
+    description: `Are you a Front-End expert, proud of your work and looking for a new challenge that you are passionate about? Do you want to be a part of a talented and innovative development team that is focused on delivering high-quality solutions to clients? If so, we invite you to join If you can develop and maintain responsive web applications using modern front-end frameworks, colwith other engineers and stakeholders to understand requirements and develop solutions while wriclean, efficient, and maintainable code using best practices... Well, good news!! You're perfect offer!
+  
+    The requirementsa are that you have a:
+
+      - Bachelor's degree in Computer Science or a related field.
+      - Proficiency in modern JavaScript frameworks such as React, Angular, or Vue.js..
+      - Strong knowledge of HTML, CSS, and responsive design.
+      - Experience with integrating front-end and back-end code.
+      
+    We hope to hear from you and join our team!`, 
     salaryRange: {
         min: 25000,
         max: 30000,
@@ -45,32 +36,24 @@ const jobOffersList = [
     },
    {
     title: 'Full-Stack Developer',
-    description: `<p>We are on the look out for a talented and motivated individual with a passion for 
-    web development to join our training program for Full Stack Developers. In this role, 
-    you will receive comprehensive training in front-end and back-end web development, as 
-    well as exposure to the latest technologies and best practices in the field.</p>
+    description: `We are on the look out for a talented and motivated individual with a pasweb development to join our training program for Full Stack Developers. In thyou will receive comprehensive training in front-end and back-end web developwell as exposure to the latest technologies and best practices in the field.
     
-    <h3>Responsibilities:</h3>
-    <ul>
-      <li>Participate in a comprehensive training program in full stack web development</li>
-      <li>CLearn front-end technologies such as HTML, CSS, and JavaScript, as well as popular front-end frameworks such as React or Angular</li>
-      <li>Learn back-end technologies such as Node.js, Express, and MongoDB, as well as popular back-end frameworks such as Ruby on Rails or Django</li>
-      <li>Collaborate with other trainees and mentors to complete team projects and individual assignments</li>
-    </ul>
+    The person we're looking for has to:
+
+      - Participate in a comprehensive training program in full stack web development.
+      - CLearn front-end technologies such as HTML, CSS, and JavaScript, as well as popular front-end frameworks such as React or Angular.
+      - Learn back-end technologies such as Node.js, Express, and MongoDB, as well as popular back-end frameworks such as Ruby on Rails or Django.
+      - Collaborate with other trainees and mentors to complete team projects and individual assignments.
     
-    <h3>Requirements:</h3>
-    <ul>
-      <li>Bachelor's degree in Computer Science or a related field</li>
-      <li>Basic understanding of programming fundamentals and algorithms</li>
-      <li>Strong problem-solving and analytical skills</li>
-      <li>Passion for web development and eagerness to learn</li>
-      <li>Excellent communication and teamwork skills</li>
-    </ul>
+    You must have a:
+
+      - Bachelor's degree in Computer Science or a related field.
+      - Basic understanding of programming fundamentals and algorithms.
+      - Strong problem-solving and analytical skills.
+      - Passion for web development and eagerness to learn.
+      - Excellent communication and teamwork skills.
     
-    <p>If you are passionate about web development and looking to jumpstart your career in this 
-    exciting field, we encourage you to apply for this training opportunity. Upon successful 
-    completion of the program, you will have the skills and experience necessary to become a 
-    Full Stack Developer and join our team.</p>`, 
+    If you are passionate about web development and looking to jumpstart your career inexciting field, we encourage you to apply for this training opportunity. Upon succecompletion of the program, you will have the skills and experience necessary to becFull Stack Developer and join our team!!`, 
     salaryRange: {
         min: 15000,
         max: 19000,
@@ -91,25 +74,21 @@ const jobOffersList = [
     },
     {
     title: 'Back-End Developer',
-    description: `<p>We are seeking a talented and experienced Back-End 
-    Developer to join our growing team. In this role, you will be responsible 
-    for designing, developing, and maintaining the back-end of our web applications, 
-    ensuring they are fast, efficient, and scalable.</p>
+    description: `We are seeking a talented and experienced Back-EDeveloper to join our growing team. In this role, you will be responsibfor designing, developing, and maintaining the back-end of our web applicationensuring they are fast, efficient, and scalable.
     
-    <h3>Responsibilities:</h3>
-    <ul>
-      <li>Write high-quality, clean, and efficient code that meets business requirements</li>
-      <li>Design, develop, and maintain the back-end of our web applications using modern web technologies</li>
-      <li>Collaborate with front-end developers, designers, and other team members to deliver high-quality products</li>
-    </ul>
+    Responsibilities:
+  
+      - Write high-quality, clean, and efficient code that meets business requirements.
+      - Design, develop, and maintain the back-end of our web applications using modern web technologies.
+      - Collaborate with front-end developers, designers, and other team members to deliver high-quality products.
     
-    <h3>Requirements:</h3>
-    <ul>
-      <li>Bachelor's degree in Computer Science or a related field</li>
-      <li>Strong proficiency in at least one back-end programming language such as Python, Node.js, or Ruby on Rails</li>
-      <li>Experience with databases such as MySQL, MongoDB, or PostgreSQL/li>
-      <li>Experience with RESTful APIs and microservices architecture</li>
-    </ul>`, 
+    
+    Requirements:
+    
+      - Bachelor's degree in Computer Science or a related field.
+      - Strong proficiency in at least one back-end programming language such as Python, Node.js, or Ruby on Rails.
+      - Experience with databases such as MySQL, MongoDB, or PostgreSQL.
+      - Experience with RESTful APIs and microservices architecture.`, 
     salaryRange: {
         min: 80000,
         max: 100000,
@@ -130,25 +109,19 @@ const jobOffersList = [
     },
    {
     title: 'Software Engineer',
-    description: `<p>We are seeking a highly motivated and talented software engineer 
-    to join our team. As a software engineer, you will work closely with our development 
-    team to design, develop, and maintain software applications and systems that meet 
-    the needs of our clients.</p>
+    description: `We are seeking a highly motivated and talented software engineer to join our team. As a software engineer, you will work closely with our development team to design, develop, and maintain software applications and systems that meet the needs of our clients.
     
-    <h3>Responsibilities:</h3>
-    <ul>
-      <li>Design, develop, and maintain software applications and systems</li>
-      <li>Collaborate with other engineers and stakeholders to understand requirements and develop solutions</li>
-      <li>Write clean, efficient, and maintainable code using best practices</li>
-    </ul>
+    Responsibilities:
     
-    <h3>Requirements:</h3>
-    <ul>
-      <li>Bachelor's degree in Computer Science or a related field</li>
-      <li>Strong proficiency in at least one programming language, such as Java, Python, or C++</li>
-      <li>Experience with software development methodologies, such as Agile or Scrum</li>
-    </ul>
-    `, 
+      - Design, develop, and maintain software applications and systems.
+      - Collaborate with other engineers and stakeholders to understand requirements and develop solutions.
+      - Write clean, efficient, and maintainable code using best practices.
+    
+    Requirements:
+    
+      - Bachelor's degree in Computer Science or a related field.
+      - Strong proficiency in at least one programming language, such as Java, Python, or C++.
+      - Experience with software development methodologies, such as Agile or Scrum.`, 
     salaryRange: {
         min: 47000,
         max: 50000,

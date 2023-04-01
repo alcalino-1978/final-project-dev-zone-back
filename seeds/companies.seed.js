@@ -43,9 +43,9 @@ const companiesList = [
     {
     email:"af@b.com" ,
     password:"1234",
-    name:"t-systems" ,
+    name:"T-Systems" ,
     description:"T-Systems ofrece soluciones integrales e integradas con las que acelera la transformación digital de empresas de todos los sectores y del sector público.",
-    logo:"https://w7.pngwing.com/pngs/656/1009/png-transparent-logo-t-systems-do-brasil-ltda-font-embrace-purple-text-logo-thumbnail.png" ,
+    logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/T-SYSTEMS-LOGO2013.svg/500px-T-SYSTEMS-LOGO2013.svg.png" ,
     cif: "R4367073F",
     listOffers:[] ,
     numberEmployees:28000,
