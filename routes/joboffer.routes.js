@@ -54,6 +54,7 @@ router.post('/', async (req, res, next) => {
     offerStatus,
     typeJob,
     vacancies,
+    keywords,
     applicants
   } = req.body;
   const jobOffer = {
@@ -65,6 +66,7 @@ router.post('/', async (req, res, next) => {
     offerStatus,
     typeJob,
     vacancies,
+    keywords,
     applicants
   }
   try {
