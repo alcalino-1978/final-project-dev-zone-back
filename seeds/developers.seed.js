@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const { DB_URL } = require('../utils/db');
+const bcrypt = require('bcrypt');
 const Company = require('../models/Company');
 const Developer = require("../models/Developer");
 
@@ -133,6 +134,13 @@ const developersList = [
     
   ]
   ;
+
+// Iterar sobre la lista de developer y hashear las contraseñas
+developersList.forEach((developer) => {
+  const saltRounds = 10; // número de rondas de hash para bcrypt
+  const hashedPassword = bcrypt.hashSync(developer.password, saltRounds); // hashear la contraseña
+  developer.password = hashedPassword; // reemplazar la contraseña sin hashear con la hasheada
+});
 
 const developersDocuments = developersList.map((developer) => new Developer(developer));
 
