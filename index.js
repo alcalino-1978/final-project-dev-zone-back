@@ -1,7 +1,9 @@
 const express = require("express");
 const path = require("path");
 const cors = require("cors");
+const bodyParser = require("body-parser");
 require("dotenv").config();
+const fs = require('fs');
 
 // Auth
 require("jsonwebtoken"); // Requerimos nuestro archivo de configuración
@@ -30,7 +32,9 @@ app.get("/", (req, res) => {
 });
 
 app.set("view engine", "ejs");
-
+// Configure body-parser middleware
+app.use(bodyParser.urlencoded({extended: true}));
+app.use(bodyParser.json());
 // Middlewares config
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

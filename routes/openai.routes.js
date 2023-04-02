@@ -1,7 +1,6 @@
 const express = require("express");
 const app = express();
 const router = express.Router();
-const bodyParser = require("body-parser");
 const relevantKeywords = require('../utils/relevantKeywordsAI.js');
 
 // const bodyParser = require('body-parser');
@@ -17,9 +16,7 @@ const openai = new OpenAIApi(config);
 const openaiAPIKey = process.env.OPEN_AI_API_KEY;
 openai.apiKey = openaiAPIKey;
 
-// Configure body-parser middleware
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+
 
 // Define the route handler for the API endpoint
 router.get("/me", (req, res) => {

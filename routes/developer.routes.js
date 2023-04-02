@@ -17,7 +17,13 @@ router.get('/',  async (req, res, next) => {
   const { illnessQuery, insuranceQuery } = req.query;
   let developers = [];
   try {
-    developers = await Developer.find();
+    developers = await Developer.find()
+    .populate({
+      path: 'jobOffers', select: 'title company offerStatus',
+      populate: {
+        path: 'company', select: 'name logo numberEmployees'
+      }
+    });
     return res.status(200).json(developers);
   } catch {
     return next(err);
@@ -30,7 +36,13 @@ router.get('/:id', async (req, res, next) => {
   const { id } = req.params;
   try {
     const idObject = mongoose.Types.ObjectId(id);
-    const developer = await Developer.findById(idObject);
+    const developer = await Developer.findById(idObject).lean()
+    .populate({
+      path: 'jobOffers', select: 'title company offerStatus',
+      populate: {
+        path: 'company', select: 'name logo numberEmployees'
+      }
+    });
     if (developer) {
       return res.status(200).json(developer);
     } else {
@@ -49,7 +61,7 @@ router.post('/', [fileMiddleware.upload.single('image'), fileMiddleware.uploadTo
   console.log(req.file_url)
   const pwdHash = await bcrypt.hash(req.body.password, 10);
   const cloudinaryUrl = req.file_url ? req.file_url : null;
-  const { fullName, age, phoneNumber, email, password, cv, salaryRange, languages, portfolio, experience, hardSkills, softSkills, typeJob, movility } = req.body;
+  const { fullName, age, phoneNumber, email, password, cv,salaryRangeMin, salaryRangeMax, languages, portfolio, experience, hardSkills, softSkills, typeJob, movility } = req.body;
   const developer = {
     fullName,
     age,
@@ -58,7 +70,8 @@ router.post('/', [fileMiddleware.upload.single('image'), fileMiddleware.uploadTo
     password,
     image: cloudinaryUrl,
     cv,
-    salaryRange,
+    salaryRangeMin, 
+    salaryRangeMax,
     languages,
     portfolio,
     experience,
@@ -122,7 +135,7 @@ router.delete('/:id', [isAuth], async (req, res, next) => {
 })
 
 // Patch Update by ID
-router.patch('/:id', [isAuth],  async (req, res) => {
+router.patch('/:id',  async (req, res) => {
   const { id } = req.params;
   try {
     // Buscar el desarrollador por id
