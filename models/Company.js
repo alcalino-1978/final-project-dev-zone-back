@@ -30,7 +30,7 @@ const companySchema = new Schema(
     },
     listOffers: {
       type: [String],
-      required: true,
+      
     },
     numberEmployees: {
       type: Number,

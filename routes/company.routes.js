@@ -48,7 +48,8 @@ router.get("/:id", async (req, res, next) => {
 
 // Post Company
 router.post("/",[fileMiddleware.upload.single('logo'), fileMiddleware.uploadToCloudinary] ,async (req, res, next) => {
-  //console.log(req.body);
+//router.post("/",async (req, res, next) => {
+  console.log(req.body);
   const pwdHash = await bcrypt.hash(req.body.password, 10);
   const cloudinaryUrl = req.file_url ? req.file_url : null;
   const {email, password, name, description, logo, cif, listOffers, numberEmployees} = req.body;
@@ -58,6 +59,7 @@ router.post("/",[fileMiddleware.upload.single('logo'), fileMiddleware.uploadToCl
     name,
     description,
     logo: cloudinaryUrl,
+    //logo,
     cif,
     listOffers,
     numberEmployees,
@@ -65,6 +67,7 @@ router.post("/",[fileMiddleware.upload.single('logo'), fileMiddleware.uploadToCl
   try {
     console.log(company);
     const newCompany = new Company(company);
+    newCompany.password = pwdHash;
     const exists = await Company.exists({ name: company.name });
    // const result = await Developer.exists({ email: newDeveloper.email });
     if (exists) {
