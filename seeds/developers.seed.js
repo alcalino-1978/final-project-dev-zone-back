@@ -6,20 +6,35 @@ const Developer = require("../models/Developer");
 
 const developersList = [
     {
-      fullName: "CARLOS",
+      fullName: "john Doe",
       age: 48,
       phoneNumber: "982-948-8357",
-      email: "mlinskill@example.com",
+      email: "johndoe@example.com",
       password: "1234",
       image: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
       cv: "https://content.fakeface.rest/male_32_9d2b88c0c6c206ebe712dc278f5c99088e3bf384.jpg",
-      salaryRangeMin: 35000,
-      salaryRangeMax: 50000,
+      salaryRangeMin: 30000,
+      salaryRangeMax: 35000,
       languages: ['Español', "English", "Deutsche"],
-      experience: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      portfolio: ['https://github.com/', "https://gitlab.com/", "https://bitbucket.org/"],
+      experience: `Como desarrollador front-end con experiencia, he trabajado en diversos proyectos y etapas del ciclo de desarrollo. Tengo habilidades sólidas en programación, diseño web y colaboración en equipo.\n
+
+      He creado interfaces de usuario para aplicaciones web y móviles, implementado diseños y funcionalidades, y desarrollado temas personalizados para diferentes plataformas. También he trabajado en estrecha colaboración con diseñadores, desarrolladores de back-end y gestores de proyectos para entregar productos digitales de alta calidad a tiempo.\n
+      
+      Me mantengo actualizado en las últimas tendencias y herramientas en tecnología y diseño web, participando en cursos y conferencias para aprender nuevas habilidades. Soy apasionado por la tecnología y la creación de productos digitales que mejoren la vida de las personas.\n
+      
+      Estoy comprometido en seguir siendo un profesional altamente capacitado y efectivo en mi trabajo.`,
       hardSkills: ["HTML","CSS","JavaScript","Angular","ReactJs","PHP","Symphony","MySql","NodeJs"],
       softSkills: ["Trabajo en equipo","Proactividad","Resolución de problemas","Colaboración","Gestión del tiempo","Flexibilidad"],
-      education: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      education: `UpgradeHub: una escuela de tecnología que ofrece programas de formación en desarrollo web y de aplicaciones móviles. En el curso Full Stack Web Development, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, MongoDB, Express, React y Redux.
+
+      Udacity: una plataforma en línea que ofrece cursos de tecnología de pago y gratuitos. En el programa Nanodegree Full Stack Web Developer, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, SQL y MongoDB, y construyen proyectos de aplicaciones web y móviles.
+      
+      Coursera: una plataforma de aprendizaje en línea que ofrece cursos y programas de grado de universidades y organizaciones en todo el mundo. En el programa de grado en línea de la Universidad de Londres, los estudiantes estudian el desarrollo completo de aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript, Node.js y React.
+      
+      Fullstack Academy: una escuela de tecnología que ofrece cursos intensivos en desarrollo web y móvil. En el programa Full Stack Web Development, los estudiantes aprenden JavaScript, React, Node.js, Express y MongoDB, y trabajan en proyectos de desarrollo web y móvil.
+      
+      General Assembly: una escuela de tecnología que ofrece cursos de formación en desarrollo web, diseño y marketing digital. En el curso de desarrollo web a tiempo completo, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, React, MongoDB y Express, y trabajan en proyectos de desarrollo web de principio a fin.`,
       typeJob: "Full Remote",
       movility: true
     },
@@ -34,10 +49,25 @@ const developersList = [
       salaryRangeMin: 35000,
       salaryRangeMax: 50000,
       languages: ['Español', "English", "Deutsche"],
-      experience: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      portfolio: ['https://github.com/', "https://gitlab.com/", "https://bitbucket.org/"],
+      experience: `Como desarrollador front-end con experiencia, he trabajado en diversos proyectos y etapas del ciclo de desarrollo. Tengo habilidades sólidas en programación, diseño web y colaboración en equipo.
+
+      He creado interfaces de usuario para aplicaciones web y móviles, implementado diseños y funcionalidades, y desarrollado temas personalizados para diferentes plataformas. También he trabajado en estrecha colaboración con diseñadores, desarrolladores de back-end y gestores de proyectos para entregar productos digitales de alta calidad a tiempo.
+      
+      Me mantengo actualizado en las últimas tendencias y herramientas en tecnología y diseño web, participando en cursos y conferencias para aprender nuevas habilidades. Soy apasionado por la tecnología y la creación de productos digitales que mejoren la vida de las personas.
+      
+      Estoy comprometido en seguir siendo un profesional altamente capacitado y efectivo en mi trabajo.`,
       hardSkills: ["HTML","CSS","JavaScript","Angular","ReactJs","PHP","Symphony","MySql","NodeJs"],
       softSkills: ["Trabajo en equipo","Proactividad","Resolución de problemas","Colaboración","Gestión del tiempo","Flexibilidad"],
-      education: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      education: `UpgradeHub: una escuela de tecnología que ofrece programas de formación en desarrollo web y de aplicaciones móviles. En el curso Full Stack Web Development, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, MongoDB, Express, React y Redux.
+
+      Udacity: una plataforma en línea que ofrece cursos de tecnología de pago y gratuitos. En el programa Nanodegree Full Stack Web Developer, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, SQL y MongoDB, y construyen proyectos de aplicaciones web y móviles.
+      
+      Coursera: una plataforma de aprendizaje en línea que ofrece cursos y programas de grado de universidades y organizaciones en todo el mundo. En el programa de grado en línea de la Universidad de Londres, los estudiantes estudian el desarrollo completo de aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript, Node.js y React.
+      
+      Fullstack Academy: una escuela de tecnología que ofrece cursos intensivos en desarrollo web y móvil. En el programa Full Stack Web Development, los estudiantes aprenden JavaScript, React, Node.js, Express y MongoDB, y trabajan en proyectos de desarrollo web y móvil.
+      
+      General Assembly: una escuela de tecnología que ofrece cursos de formación en desarrollo web, diseño y marketing digital. En el curso de desarrollo web a tiempo completo, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, React, MongoDB y Express, y trabajan en proyectos de desarrollo web de principio a fin.`,
       typeJob: "Full Remote",
       movility: true
     },
@@ -52,10 +82,25 @@ const developersList = [
       salaryRangeMin: 35000,
       salaryRangeMax: 50000,
       languages: ['Español', "English", "Deutsche"],
-      experience: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      portfolio: ['https://github.com/', "https://gitlab.com/", "https://bitbucket.org/"],
+      experience: `Como desarrollador front-end con experiencia, he trabajado en diversos proyectos y etapas del ciclo de desarrollo. Tengo habilidades sólidas en programación, diseño web y colaboración en equipo.
+
+      He creado interfaces de usuario para aplicaciones web y móviles, implementado diseños y funcionalidades, y desarrollado temas personalizados para diferentes plataformas. También he trabajado en estrecha colaboración con diseñadores, desarrolladores de back-end y gestores de proyectos para entregar productos digitales de alta calidad a tiempo.
+      
+      Me mantengo actualizado en las últimas tendencias y herramientas en tecnología y diseño web, participando en cursos y conferencias para aprender nuevas habilidades. Soy apasionado por la tecnología y la creación de productos digitales que mejoren la vida de las personas.
+      
+      Estoy comprometido en seguir siendo un profesional altamente capacitado y efectivo en mi trabajo.`,
       hardSkills: ["HTML","CSS","JavaScript","Angular","ReactJs","PHP","Symphony","MySql","NodeJs"],
       softSkills: ["Trabajo en equipo","Proactividad","Resolución de problemas","Colaboración","Gestión del tiempo","Flexibilidad"],
-      education: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      education: `UpgradeHub: una escuela de tecnología que ofrece programas de formación en desarrollo web y de aplicaciones móviles. En el curso Full Stack Web Development, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, MongoDB, Express, React y Redux.
+
+      Udacity: una plataforma en línea que ofrece cursos de tecnología de pago y gratuitos. En el programa Nanodegree Full Stack Web Developer, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, SQL y MongoDB, y construyen proyectos de aplicaciones web y móviles.
+      
+      Coursera: una plataforma de aprendizaje en línea que ofrece cursos y programas de grado de universidades y organizaciones en todo el mundo. En el programa de grado en línea de la Universidad de Londres, los estudiantes estudian el desarrollo completo de aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript, Node.js y React.
+      
+      Fullstack Academy: una escuela de tecnología que ofrece cursos intensivos en desarrollo web y móvil. En el programa Full Stack Web Development, los estudiantes aprenden JavaScript, React, Node.js, Express y MongoDB, y trabajan en proyectos de desarrollo web y móvil.
+      
+      General Assembly: una escuela de tecnología que ofrece cursos de formación en desarrollo web, diseño y marketing digital. En el curso de desarrollo web a tiempo completo, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, React, MongoDB y Express, y trabajan en proyectos de desarrollo web de principio a fin.`,
       typeJob: "Full Remote",
       movility: true
     },
@@ -70,10 +115,25 @@ const developersList = [
       salaryRangeMin: 35000,
       salaryRangeMax: 50000,
       languages: ['Español', "English", "Deutsche"],
-      experience: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      portfolio: ['https://github.com/', "https://gitlab.com/", "https://bitbucket.org/"],
+      experience: `Como desarrollador front-end con experiencia, he trabajado en diversos proyectos y etapas del ciclo de desarrollo. Tengo habilidades sólidas en programación, diseño web y colaboración en equipo.
+
+      He creado interfaces de usuario para aplicaciones web y móviles, implementado diseños y funcionalidades, y desarrollado temas personalizados para diferentes plataformas. También he trabajado en estrecha colaboración con diseñadores, desarrolladores de back-end y gestores de proyectos para entregar productos digitales de alta calidad a tiempo.
+      
+      Me mantengo actualizado en las últimas tendencias y herramientas en tecnología y diseño web, participando en cursos y conferencias para aprender nuevas habilidades. Soy apasionado por la tecnología y la creación de productos digitales que mejoren la vida de las personas.
+      
+      Estoy comprometido en seguir siendo un profesional altamente capacitado y efectivo en mi trabajo.`,
       hardSkills: ["HTML","CSS","JavaScript","Angular","ReactJs","PHP","Symphony","MySql","NodeJs"],
       softSkills: ["Trabajo en equipo","Proactividad","Resolución de problemas","Colaboración","Gestión del tiempo","Flexibilidad"],
-      education: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      education: `UpgradeHub: una escuela de tecnología que ofrece programas de formación en desarrollo web y de aplicaciones móviles. En el curso Full Stack Web Development, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, MongoDB, Express, React y Redux.
+
+      Udacity: una plataforma en línea que ofrece cursos de tecnología de pago y gratuitos. En el programa Nanodegree Full Stack Web Developer, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, SQL y MongoDB, y construyen proyectos de aplicaciones web y móviles.
+      
+      Coursera: una plataforma de aprendizaje en línea que ofrece cursos y programas de grado de universidades y organizaciones en todo el mundo. En el programa de grado en línea de la Universidad de Londres, los estudiantes estudian el desarrollo completo de aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript, Node.js y React.
+      
+      Fullstack Academy: una escuela de tecnología que ofrece cursos intensivos en desarrollo web y móvil. En el programa Full Stack Web Development, los estudiantes aprenden JavaScript, React, Node.js, Express y MongoDB, y trabajan en proyectos de desarrollo web y móvil.
+      
+      General Assembly: una escuela de tecnología que ofrece cursos de formación en desarrollo web, diseño y marketing digital. En el curso de desarrollo web a tiempo completo, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, React, MongoDB y Express, y trabajan en proyectos de desarrollo web de principio a fin.`,
       typeJob: "Full Remote",
       movility: true
     },
@@ -88,10 +148,25 @@ const developersList = [
       salaryRangeMin: 35000,
       salaryRangeMax: 50000,
       languages: ['Español', "English", "Deutsche"],
-      experience: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      portfolio: ['https://github.com/', "https://gitlab.com/", "https://bitbucket.org/"],
+      experience: `Como desarrollador front-end con experiencia, he trabajado en diversos proyectos y etapas del ciclo de desarrollo. Tengo habilidades sólidas en programación, diseño web y colaboración en equipo.
+
+      He creado interfaces de usuario para aplicaciones web y móviles, implementado diseños y funcionalidades, y desarrollado temas personalizados para diferentes plataformas. También he trabajado en estrecha colaboración con diseñadores, desarrolladores de back-end y gestores de proyectos para entregar productos digitales de alta calidad a tiempo.
+      
+      Me mantengo actualizado en las últimas tendencias y herramientas en tecnología y diseño web, participando en cursos y conferencias para aprender nuevas habilidades. Soy apasionado por la tecnología y la creación de productos digitales que mejoren la vida de las personas.
+      
+      Estoy comprometido en seguir siendo un profesional altamente capacitado y efectivo en mi trabajo.`,
       hardSkills: ["HTML","CSS","JavaScript","Angular","ReactJs","PHP","Symphony","MySql","NodeJs"],
       softSkills: ["Trabajo en equipo","Proactividad","Resolución de problemas","Colaboración","Gestión del tiempo","Flexibilidad"],
-      education: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      education: `UpgradeHub: una escuela de tecnología que ofrece programas de formación en desarrollo web y de aplicaciones móviles. En el curso Full Stack Web Development, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, MongoDB, Express, React y Redux.
+
+      Udacity: una plataforma en línea que ofrece cursos de tecnología de pago y gratuitos. En el programa Nanodegree Full Stack Web Developer, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, SQL y MongoDB, y construyen proyectos de aplicaciones web y móviles.
+      
+      Coursera: una plataforma de aprendizaje en línea que ofrece cursos y programas de grado de universidades y organizaciones en todo el mundo. En el programa de grado en línea de la Universidad de Londres, los estudiantes estudian el desarrollo completo de aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript, Node.js y React.
+      
+      Fullstack Academy: una escuela de tecnología que ofrece cursos intensivos en desarrollo web y móvil. En el programa Full Stack Web Development, los estudiantes aprenden JavaScript, React, Node.js, Express y MongoDB, y trabajan en proyectos de desarrollo web y móvil.
+      
+      General Assembly: una escuela de tecnología que ofrece cursos de formación en desarrollo web, diseño y marketing digital. En el curso de desarrollo web a tiempo completo, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, React, MongoDB y Express, y trabajan en proyectos de desarrollo web de principio a fin.`,
       typeJob: "Full Remote",
       movility: true
     },
@@ -106,10 +181,25 @@ const developersList = [
       salaryRangeMin: 35000,
       salaryRangeMax: 50000,
       languages: ['Español', "English", "Deutsche"],
-      experience: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      portfolio: ['https://github.com/', "https://gitlab.com/", "https://bitbucket.org/"],
+      experience: `Como desarrollador front-end con experiencia, he trabajado en diversos proyectos y etapas del ciclo de desarrollo. Tengo habilidades sólidas en programación, diseño web y colaboración en equipo.
+
+      He creado interfaces de usuario para aplicaciones web y móviles, implementado diseños y funcionalidades, y desarrollado temas personalizados para diferentes plataformas. También he trabajado en estrecha colaboración con diseñadores, desarrolladores de back-end y gestores de proyectos para entregar productos digitales de alta calidad a tiempo.
+      
+      Me mantengo actualizado en las últimas tendencias y herramientas en tecnología y diseño web, participando en cursos y conferencias para aprender nuevas habilidades. Soy apasionado por la tecnología y la creación de productos digitales que mejoren la vida de las personas.
+      
+      Estoy comprometido en seguir siendo un profesional altamente capacitado y efectivo en mi trabajo.`,
       hardSkills: ["HTML","CSS","JavaScript","Angular","ReactJs","PHP","Symphony","MySql","NodeJs"],
       softSkills: ["Trabajo en equipo","Proactividad","Resolución de problemas","Colaboración","Gestión del tiempo","Flexibilidad"],
-      education: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      education: `UpgradeHub: una escuela de tecnología que ofrece programas de formación en desarrollo web y de aplicaciones móviles. En el curso Full Stack Web Development, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, MongoDB, Express, React y Redux.
+
+      Udacity: una plataforma en línea que ofrece cursos de tecnología de pago y gratuitos. En el programa Nanodegree Full Stack Web Developer, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, SQL y MongoDB, y construyen proyectos de aplicaciones web y móviles.
+      
+      Coursera: una plataforma de aprendizaje en línea que ofrece cursos y programas de grado de universidades y organizaciones en todo el mundo. En el programa de grado en línea de la Universidad de Londres, los estudiantes estudian el desarrollo completo de aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript, Node.js y React.
+      
+      Fullstack Academy: una escuela de tecnología que ofrece cursos intensivos en desarrollo web y móvil. En el programa Full Stack Web Development, los estudiantes aprenden JavaScript, React, Node.js, Express y MongoDB, y trabajan en proyectos de desarrollo web y móvil.
+      
+      General Assembly: una escuela de tecnología que ofrece cursos de formación en desarrollo web, diseño y marketing digital. En el curso de desarrollo web a tiempo completo, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, React, MongoDB y Express, y trabajan en proyectos de desarrollo web de principio a fin.`,
       typeJob: "Full Remote",
       movility: true
     },
@@ -124,10 +214,25 @@ const developersList = [
       salaryRangeMin: 35000,
       salaryRangeMax: 50000,
       languages: ['Español', "English", "Deutsche"],
-      experience: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      portfolio: ['https://github.com/', "https://gitlab.com/", "https://bitbucket.org/"],
+      experience: `Como desarrollador front-end con experiencia, he trabajado en diversos proyectos y etapas del ciclo de desarrollo. Tengo habilidades sólidas en programación, diseño web y colaboración en equipo.
+
+      He creado interfaces de usuario para aplicaciones web y móviles, implementado diseños y funcionalidades, y desarrollado temas personalizados para diferentes plataformas. También he trabajado en estrecha colaboración con diseñadores, desarrolladores de back-end y gestores de proyectos para entregar productos digitales de alta calidad a tiempo.
+      
+      Me mantengo actualizado en las últimas tendencias y herramientas en tecnología y diseño web, participando en cursos y conferencias para aprender nuevas habilidades. Soy apasionado por la tecnología y la creación de productos digitales que mejoren la vida de las personas.
+      
+      Estoy comprometido en seguir siendo un profesional altamente capacitado y efectivo en mi trabajo.`,
       hardSkills: ["HTML","CSS","JavaScript","Angular","ReactJs","PHP","Symphony","MySql","NodeJs"],
       softSkills: ["Trabajo en equipo","Proactividad","Resolución de problemas","Colaboración","Gestión del tiempo","Flexibilidad"],
-      education: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+      education: `UpgradeHub: una escuela de tecnología que ofrece programas de formación en desarrollo web y de aplicaciones móviles. En el curso Full Stack Web Development, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, MongoDB, Express, React y Redux.
+
+      Udacity: una plataforma en línea que ofrece cursos de tecnología de pago y gratuitos. En el programa Nanodegree Full Stack Web Developer, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, SQL y MongoDB, y construyen proyectos de aplicaciones web y móviles.
+      
+      Coursera: una plataforma de aprendizaje en línea que ofrece cursos y programas de grado de universidades y organizaciones en todo el mundo. En el programa de grado en línea de la Universidad de Londres, los estudiantes estudian el desarrollo completo de aplicaciones web utilizando tecnologías como HTML, CSS, JavaScript, Node.js y React.
+      
+      Fullstack Academy: una escuela de tecnología que ofrece cursos intensivos en desarrollo web y móvil. En el programa Full Stack Web Development, los estudiantes aprenden JavaScript, React, Node.js, Express y MongoDB, y trabajan en proyectos de desarrollo web y móvil.
+      
+      General Assembly: una escuela de tecnología que ofrece cursos de formación en desarrollo web, diseño y marketing digital. En el curso de desarrollo web a tiempo completo, los estudiantes aprenden HTML, CSS, JavaScript, Node.js, React, MongoDB y Express, y trabajan en proyectos de desarrollo web de principio a fin.`,
       typeJob: "Full Remote",
       movility: true
     },
