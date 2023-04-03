@@ -160,21 +160,6 @@ router.patch('/:id',  async (req, res) => {
 
 // Put Update by ID
 
-router.put('/:id', [isAuth], async (req, res, next) => {
-  try {
-    const { id } = req.params;
-    const developerModify = new Developer(req.body);
-    developerModify._id = id;
-    const developer = await Developer.findByIdAndUpdate(id, developerModify);
-    if (developer) {
-      return res.status(200).json(developerModify);
-    } else {
-      return res.status(404).json('Developer by this ID it is not found');
-    }
-  } catch (error) {
-    next(error);
-  }
-})
 router.put("/:id",[isAuth],[fileMiddleware.upload.single('image'), fileMiddleware.uploadToCloudinary], async (req, res, next) => {
   debugger
   const pwdHash = await bcrypt.hash(req.body.password, 10);
