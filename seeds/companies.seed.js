@@ -9,10 +9,12 @@ const Developer = require("../models/Developer");
 
 const companiesList = [
     {
-    email:"aa@b.com" ,
+    email:"chema@minsait.com" ,
     password:"1234",
     name:"Minsait" ,
-    description:"Impulsamos la transformación de los negocios y la sociedad mediante soluciones y servicios innovadores, poniendo a las personas en el centro.",
+    description:`Impulsamos la transformación de los negocios y la sociedad mediante soluciones y servicios innovadores, poniendo a las personas en el centro.\n
+    Bienvenidos a la revolución tecnológica más humana.\n
+    Somos la huella que dejamos y la huella que queremos dejar.`,
     logo:"https://logos-download.com/wp-content/uploads/2022/01/Minsait_Logo.png" ,
     cif: "E09031188",
     listOffers: [],
@@ -20,38 +22,62 @@ const companiesList = [
     developers: [], 
     },
     {
-    email:"ab@b.com" ,
+    email:"Alberto@inetum.com" ,
     password:"1234",
     name:"inetum" ,
-    description:"Inetum es una compañía de IT ágil que proporciona servicios y soluciones digitales y un grupo global que ayuda a compañías e instituciones a aprovechar al máximo el flow digital.",
-    logo:"https://rhmagazine.pt/wp-content/uploads/2021/03/inetum_rhmagazine_online.jpg" ,
-    cif: "F32804544",
+    description:`Inetum es una compañía de IT ágil que proporciona servicios y soluciones digitales y un grupo global que ayuda a compañías e instituciones a aprovechar al máximo el flow digital.\n
+    Con su perfil multi-experto, Inetum ofrece a sus clientes una combinación única de proximidad, organización sectorial y soluciones de última generación \n
+    Presente en más de 27 países, el Grupo tiene cerca de 27.000 empleados y en 2021 generó unos ingresos de 2.200 millones de euros.`,
+    logo:"https://www.inetum.com/upload/public/styles/small_large_720/public/media/image/2022-09/logo%20inetum.jpg?itok=Bh2LH3Tg" ,
+    cif: "	A28855260",
     listOffers: [] ,
-    numberEmployees:40000,
+    numberEmployees:27000,
     developers: [],   
     },
     {
-    email:"ac@b.com" ,
+    email:"carlos@altia.com" ,
     password:"1234", 
-    name: "ISVISOFT",
-    description:"En Isvisoft desarrollamos ideas. No nos limitamos a programar, si no que nos implicamos al 100% con tu proyecto",
-    logo: "https://isvisoft.com/wp-content/uploads/Isvisoft.png" ,
-    cif: "H19878693",
+    name: "ALTIA",
+    description:`Somos una compañía que ofrece servicios de alto valor de tecnologías de la información y consultoría de transformación digital.\n
+
+    Gracias al compromiso de nuestros más de 3.200 profesionales, repartidos en más de 20 localizaciones de 7 países, acompañamos como socio tecnológico a más de 900 clientes en todo el mundo.\n
+    
+    Con 28 años de experiencia somos una de las primeras compañías independientes del sector.
+    
+    Grupo Altia cotiza en el BME Growth, el mercado de las empresas en expansión.`,
+    logo: "https://www.aenovomilladoiro.com/media/im/1200x900-altiaweb-1620120428.png" ,
+    cif: "A15456585",
     listOffers:[] ,
-    numberEmployees:12,
+    numberEmployees:3200,
     developers: [],   
     },
     {
-    email:"af@b.com" ,
+    email:"rafa@tsystems.com" ,
     password:"1234",
     name:"T-Systems" ,
-    description:"T-Systems ofrece soluciones integrales e integradas con las que acelera la transformación digital de empresas de todos los sectores y del sector público.",
-    logo:"https://upload.wikimedia.org/wikipedia/commons/thumb/0/0a/T-SYSTEMS-LOGO2013.svg/500px-T-SYSTEMS-LOGO2013.svg.png" ,
-    cif: "R4367073F",
+    description:`En T-Systems, encontrarás proyectos rompedores que suman al bienestar social y ecológico.\n
+    Queremos dar la bienvenida a nuevos talentos como tú, puntos de vista distintos, que acepten retos y un continuo aprendizaje.\n
+    ¡Todo esto, de una forma divertida!`,
+    logo:"https://pcformat.mx/www/wp-content/uploads/2022/02/T-Systems-logo.png" ,
+    cif: "A81608077",
     listOffers:[] ,
     numberEmployees:28000,
     developers: [],   
-    },    
+    },  
+    {
+      email:"mario@capgemini.com" ,
+      password:"1234",
+      name:"Capgemini" ,
+      description:`Capgemini colabora con compañías para transformar y administrar su negocio liberando el valor de la tecnología.\n
+      Como socio estratégico para empresas de todo el mundo, hemos aprovechado el valor la tecnología para permitir la transformación empresarial durante más de 50 años.\n
+       Abordamos toda la gama de necesidades comerciales, desde la estrategia y el diseño hasta la gestión de operaciones.\n
+       Para hacer esto, recurrimos a una profunda experiencia en cada sector y un dominio total de la innovación en rápida evolución como el cloud, la inteligencia artificial de datos...`,
+      logo:"https://lespetitesannoncesdemarine.files.wordpress.com/2019/07/capgemini-logo.jpg?w=1200" ,
+      cif: "B08377715",
+      listOffers:[] ,
+      numberEmployees:12000,
+      developers: [],   
+      }  
   ]
   ;
 // Iterar sobre la lista de empresas y hashear las contraseñas
