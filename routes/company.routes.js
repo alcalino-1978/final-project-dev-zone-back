@@ -17,7 +17,9 @@ const router = express.Router();
 router.get("/", async (req, res, next) => {
   let companies = [];  
   try {
-    companies = await Company.find().populate("developers", "fullName cv");
+    companies = await Company.find()
+    .populate("developers", "fullName cv")
+    .populate("listOffers", "title");
     //const employee = await Employee.find();
     return res.status(200).json(companies);
   } catch (err) {
@@ -31,10 +33,9 @@ router.get("/:id", async (req, res, next) => {
   try {
     const idObject = mongoose.Types.ObjectId(id);
     console.log(idObject);
-    const company = await Company.findById(idObject).populate(
-      "developers",
-      "fullName cv"
-    );
+    const company = await Company.findById(idObject)
+    .populate("developers", "fullName cv")
+    .populate("listOffers", "title createdAt offerStatus");
     //console.log(company);
     if (company) {
       return res.status(200).json(company);
@@ -118,10 +119,10 @@ router.delete("/:id",[isAuth],  async (req, res, next) => {
 });
 
 // PATCH Update by ID
-router.patch('/:id', [isAuth],  async (req, res) => {
+router.patch('/:id',[isAuth],  async (req, res) => {
   const { id } = req.params;
   try {
-    // Buscar el desarrollador por id
+    // Buscar la compañia por id
     const company = await Company.findById(id);
     if (!company) {
       return res.status(404).send({ error: 'Company by this ID it is not found' });
@@ -139,6 +140,7 @@ router.patch('/:id', [isAuth],  async (req, res) => {
     res.status(500).send({ error: 'Error in update field' });
   }
 });
+
 
 // PUT Update by ID
 router.put("/:id",[isAuth],[fileMiddleware.upload.single('logo'), fileMiddleware.uploadToCloudinary], async (req, res, next) => {
