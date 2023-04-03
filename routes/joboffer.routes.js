@@ -30,7 +30,7 @@ router.get('/:id', async (req, res, next) => {
     console.log(idObject);
     const joboffer = await JobOffer.findById(idObject)
     .populate('company', 'name logo numberEmployees')
-    .populate('applicants', 'fullName image');
+    .populate('applicants', 'fullName image hardSkills');
     console.log(joboffer);
     if (joboffer) {
       return res.status(200).json(joboffer);
@@ -72,7 +72,16 @@ router.post('/', async (req, res, next) => {
   try {
     const newJobOffer = new JobOffer(jobOffer);
     const createdOffer = await newJobOffer.save();
-    return res.status(201).json(`The ${createdOffer.title} offer has been created succesfully!`);
+
+    const offerId = createdOffer._id;
+    const companyId = newJobOffer.company[0];
+
+    await Company.findOneAndUpdate(
+      companyId,
+      { $push: { listOffers: offerId }}
+    );
+
+    return res.status(201).json(createdOffer);
   } catch (error) {
     next(error);
   }
@@ -91,6 +100,13 @@ router.delete('/:id', async (req, res, next) => {
           listOffers: [{_id: id}],
       },
     });
+
+    await Developer.updateMany({}, {
+      $pullAll: {
+          jobOffers: [{_id: id}],
+      },
+    }); 
+    
     await JobOffer.findByIdAndDelete(id);
     return res.status(200).json(`${offer.title} offer has been deleted sucessfully!`)
   } catch (error) {
@@ -99,7 +115,7 @@ router.delete('/:id', async (req, res, next) => {
 })
 
 // Patch Update by ID
-router.patch('/:id', [isAuth],  async (req, res) => {
+router.patch('/:id',  async (req, res) => {
   const { id } = req.params;
   try {
     // Buscar el desarrollador por id
@@ -124,11 +140,35 @@ router.patch('/:id', [isAuth],  async (req, res) => {
 // Put Update by ID
 
 router.put('/:id', async (req, res, next) => {
+  const { 
+    title,
+    description,
+    company,
+    salaryRange,
+    hiring,
+    offerStatus,
+    typeJob,
+    vacancies,
+    keywords,
+    applicants
+  } = req.body;
+  const jobOffer = {
+    title,
+    description,
+    company,
+    salaryRange,
+    hiring,
+    offerStatus,
+    typeJob,
+    vacancies,
+    keywords,
+    applicants
+  }
   try {
     const { id } = req.params;
-    const modifyOffer = new JobOffer(req.body);
+    const modifyOffer = new JobOffer(jobOffer);
     modifyOffer._id = id;
-    const offer = await JobOffer.findByIdAndUpdate(id, modifyOffer);
+    const offer = await JobOffer.findByIdAndUpdate(id, modifyOffer, { new: true });
     if (offer) {
       return res.status(200).json(`Offer with ID: ${modifyOffer.id} has been updated sucessfully!'`);
     } else {
