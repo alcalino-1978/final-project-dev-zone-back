@@ -45,7 +45,7 @@ router.get('/:id', async (req, res, next) => {
 })
 
 // Post Offer
-router.post('/', async (req, res, next) => {
+router.post('/',[isAuth], async (req, res, next) => {
   const { 
     title,
     description,
@@ -89,7 +89,7 @@ router.post('/', async (req, res, next) => {
 });
 
 // Delete Offer
-router.delete('/:id', async (req, res, next) => {
+router.delete('/:id',[isAuth], async (req, res, next) => {
   try {
     const { id } = req.params;
     const offer = await JobOffer.findById(id).lean();
@@ -116,7 +116,7 @@ router.delete('/:id', async (req, res, next) => {
 })
 
 // Patch Update by ID
-router.patch('/:id',  async (req, res) => {
+router.patch('/:id',[isAuth],  async (req, res) => {
   const { id } = req.params;
   try {
     // Buscar el desarrollador por id
@@ -140,7 +140,7 @@ router.patch('/:id',  async (req, res) => {
 
 // Put Update by ID
 
-router.put('/:id', async (req, res, next) => {
+router.put('/:id',[isAuth], async (req, res, next) => {
   const { 
     title,
     description,
