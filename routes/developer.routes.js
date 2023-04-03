@@ -61,7 +61,7 @@ router.post('/', [fileMiddleware.upload.single('image'), fileMiddleware.uploadTo
   console.log(req.file_url)
   const pwdHash = await bcrypt.hash(req.body.password, 10);
   const cloudinaryUrl = req.file_url ? req.file_url : null;
-  const { fullName, age, phoneNumber, email, password, cv,salaryRangeMin, salaryRangeMax, languages, portfolio, experience, hardSkills, softSkills, typeJob, movility } = req.body;
+  const { fullName, age, phoneNumber, email, password, cv,salaryRangeMin, salaryRangeMax, languages, portfolio, experience, hardSkills, softSkills, education, typeJob, movility } = req.body;
   const developer = {
     fullName,
     age,
@@ -77,6 +77,7 @@ router.post('/', [fileMiddleware.upload.single('image'), fileMiddleware.uploadTo
     experience,
     hardSkills,
     softSkills,
+    education,
     typeJob,
     movility
   }

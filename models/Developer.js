@@ -19,7 +19,7 @@ const developerSchema = new Schema (
         experience: { type: String, required: true },
         hardSkills: { type: [String], required: true },
         softSkills: { type: [String], required: true },
-        education: { type: [String], required: true },
+        education: { type: String, required: true },
         typeJob: { type: String, required: true, enum: ['Full Remote', 'Hybrid', 'Presential'] },
         movility: { type: Boolean },
         jobOffers: [{ type: mongoose.Schema.Types.ObjectId, ref: 'JobOffer' }]
