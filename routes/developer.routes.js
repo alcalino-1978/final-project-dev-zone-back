@@ -175,6 +175,51 @@ router.put('/:id', [isAuth], async (req, res, next) => {
     next(error);
   }
 })
+router.put("/:id",[isAuth],[fileMiddleware.upload.single('image'), fileMiddleware.uploadToCloudinary], async (req, res, next) => {
+  debugger
+  const pwdHash = await bcrypt.hash(req.body.password, 10);
+  const cloudinaryUrl = req.file_url ? req.file_url : null;
+  const { fullName, age, phoneNumber, email, password, cv,salaryRangeMin, salaryRangeMax, languages, portfolio, experience, hardSkills, softSkills, education, typeJob, movility } = req.body;
+  const developerUpdated = {
+    fullName,
+    age,
+    phoneNumber,
+    email,
+    password,
+    image: cloudinaryUrl,
+    cv,
+    salaryRangeMin, 
+    salaryRangeMax,
+    languages,
+    portfolio,
+    experience,
+    hardSkills,
+    softSkills,
+    education,
+    typeJob,
+    movility
+  }
+  try {
+    const { id } = req.params;
+    console.log(req.body, id);
+    const developerModify = new Developer(developerUpdated);
+    developerModify.password = pwdHash;
+    developerModify._id = id;
+    const updatedDeveloper = await Developer.findByIdAndUpdate(id, developerModify, { new: true });
+    console.log(updatedDeveloper)
+    if (updatedDeveloper) {
+      return res.json({
+        status: 201,
+        message: 'User updated and logged in correctly',
+        data: { updatedDeveloper }
+      });
+    } else {
+      return res.status(404).json("Developer by this ID it is not found");
+    }
+  } catch (error) {
+    next(error);
+  }
+});
 
 
 module.exports = router;
