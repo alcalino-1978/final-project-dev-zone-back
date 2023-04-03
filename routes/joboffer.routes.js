@@ -3,6 +3,7 @@ const mongoose = require('mongoose');
 const { isAuth } = require('../auth/jwt');
 const JobOffer = require('../models/JobOffer');
 const Company = require('../models/Company');
+const Developer = require('../models/Developer');
 
 
 const router = express.Router();
@@ -149,8 +150,7 @@ router.put('/:id', async (req, res, next) => {
     offerStatus,
     typeJob,
     vacancies,
-    keywords,
-    applicants
+    keywords
   } = req.body;
   const jobOffer = {
     title,
@@ -161,8 +161,7 @@ router.put('/:id', async (req, res, next) => {
     offerStatus,
     typeJob,
     vacancies,
-    keywords,
-    applicants
+    keywords
   }
   try {
     const { id } = req.params;
