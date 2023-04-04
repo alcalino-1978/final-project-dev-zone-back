@@ -6,16 +6,13 @@ const JobOffer = require("../models/JobOffer");
 const jobOffersList = [
    {
     title: 'Front-End Developer',
-    description: `Are you a Front-End expert, proud of your work and looking for a new challenge that you are passionate about? Do you want to be a part of a talented and innovative development team that is focused on delivering high-quality solutions to clients? If so, we invite you to join If you can develop and maintain responsive web applications using modern front-end frameworks, colwith other engineers and stakeholders to understand requirements and develop solutions while wriclean, efficient, and maintainable code using best practices... Well, good news!! You're perfect offer!
-  
-    The requirementsa are that you have a:
+    description: `¡Claro! Aquí tienes una oferta de Front-End Developer con más detalles:
 
-      - Bachelor's degree in Computer Science or a related field.
-      - Proficiency in modern JavaScript frameworks such as React, Angular, or Vue.js..
-      - Strong knowledge of HTML, CSS, and responsive design.
-      - Experience with integrating front-end and back-end code.
-      
-    We hope to hear from you and join our team!`, 
+    Estamos buscando un Front-End Developer con habilidades en HTML, CSS y JavaScript, y experiencia en React. Debe tener habilidades para crear soluciones escalables y trabajar en equipo para asegurar el éxito del proyecto.
+    
+    El candidato ideal tendrá conocimientos en diseño UI/UX, experiencia en metodologías ágiles y en el uso de herramientas de control de versiones como Git. Además, debe tener habilidades de comunicación efectiva y la capacidad de trabajar bajo presión en un ambiente dinámico.
+    
+    Ofrecemos excelentes beneficios, oportunidades de crecimiento y desarrollo profesional y un ambiente de trabajo desafiante y dinámico. Si estás buscando un nuevo desafío en el desarrollo de software y quieres unirte a un equipo de alto rendimiento, ¡aplica ahora y únete a nosotros en nuestro camino hacia el éxito!`, 
     salaryRange: {
         min: 25000,
         max: 30000,
@@ -36,24 +33,11 @@ const jobOffersList = [
     },
    {
     title: 'Full-Stack Developer',
-    description: `We are on the look out for a talented and motivated individual with a pasweb development to join our training program for Full Stack Developers. In thyou will receive comprehensive training in front-end and back-end web developwell as exposure to the latest technologies and best practices in the field.
-    
-    The person we're looking for has to:
+    description: `Estamos buscando un Full-Stack Developer con experiencia en tecnologías como JavaScript, React y Node.js. Debe tener habilidades para crear soluciones escalables y trabajar en equipo para asegurar el éxito del proyecto.
 
-      - Participate in a comprehensive training program in full stack web development.
-      - CLearn front-end technologies such as HTML, CSS, and JavaScript, as well as popular front-end frameworks such as React or Angular.
-      - Learn back-end technologies such as Node.js, Express, and MongoDB, as well as popular back-end frameworks such as Ruby on Rails or Django.
-      - Collaborate with other trainees and mentors to complete team projects and individual assignments.
+    El candidato ideal tendrá conocimientos de bases de datos como MySQL y MongoDB, experiencia en metodologías ágiles y en el uso de herramientas de control de versiones como Git. Además, debe tener habilidades de comunicación efectiva y la capacidad de trabajar bajo presión en un ambiente dinámico.
     
-    You must have a:
-
-      - Bachelor's degree in Computer Science or a related field.
-      - Basic understanding of programming fundamentals and algorithms.
-      - Strong problem-solving and analytical skills.
-      - Passion for web development and eagerness to learn.
-      - Excellent communication and teamwork skills.
-    
-    If you are passionate about web development and looking to jumpstart your career inexciting field, we encourage you to apply for this training opportunity. Upon succecompletion of the program, you will have the skills and experience necessary to becFull Stack Developer and join our team!!`, 
+    Ofrecemos excelentes beneficios, oportunidades de crecimiento y desarrollo profesional y un ambiente de trabajo desafiante y dinámico. Si estás buscando un nuevo desafío en el desarrollo de software y quieres unirte a un equipo de alto rendimiento, ¡aplica ahora y únete a nosotros en nuestro camino hacia el éxito!`, 
     salaryRange: {
         min: 15000,
         max: 19000,
@@ -74,21 +58,11 @@ const jobOffersList = [
     },
     {
     title: 'Back-End Developer',
-    description: `We are seeking a talented and experienced Back-EDeveloper to join our growing team. In this role, you will be responsibfor designing, developing, and maintaining the back-end of our web applicationensuring they are fast, efficient, and scalable.
-    
-    Responsibilities:
-  
-      - Write high-quality, clean, and efficient code that meets business requirements.
-      - Design, develop, and maintain the back-end of our web applications using modern web technologies.
-      - Collaborate with front-end developers, designers, and other team members to deliver high-quality products.
-    
-    
-    Requirements:
-    
-      - Bachelor's degree in Computer Science or a related field.
-      - Strong proficiency in at least one back-end programming language such as Python, Node.js, or Ruby on Rails.
-      - Experience with databases such as MySQL, MongoDB, or PostgreSQL.
-      - Experience with RESTful APIs and microservices architecture.`, 
+    description: `Estamos buscando un desarrollador Back-End experimentado para unirse a nuestro equipo. Debes tener habilidades en lenguajes como Python, Node.js y bases de datos como MySQL y MongoDB, así como experiencia en diseño e implementación de soluciones escalables y seguras.
+
+    Además, buscamos a alguien que esté actualizado en las últimas tecnologías y tendencias en el desarrollo de software. Es importante que tengas habilidades de comunicación y colaboración efectivas, así como la capacidad de trabajar en equipo y bajo presión.
+   
+    Ofrecemos un ambiente de trabajo dinámico y desafiante, oportunidades de crecimiento profesional y un salario competitivo. El trabajo remoto está disponible para aquellos que lo prefieran. ¡Únete a nuestro equipo y sé parte del futuro de nuestro éxito!`, 
     salaryRange: {
         min: 80000,
         max: 100000,
@@ -109,37 +83,149 @@ const jobOffersList = [
     },
    {
     title: 'Software Engineer',
-    description: `We are seeking a highly motivated and talented software engineer to join our team. As a software engineer, you will work closely with our development team to design, develop, and maintain software applications and systems that meet the needs of our clients.
+    description: `Estamos buscando un Software Engineer con experiencia en Azure, .NET, C# y SQL Server para unirse a nuestro equipo. El candidato ideal debe ser capaz de diseñar, desarrollar e implementar soluciones escalables y de alta calidad en la nube de Azure.
+
+    Además, deberá tener habilidades de colaboración y comunicación efectivas, así como experiencia en metodologías ágiles y en el uso de herramientas de control de versiones como Git.
     
-    Responsibilities:
-    
-      - Design, develop, and maintain software applications and systems.
-      - Collaborate with other engineers and stakeholders to understand requirements and develop solutions.
-      - Write clean, efficient, and maintainable code using best practices.
-    
-    Requirements:
-    
-      - Bachelor's degree in Computer Science or a related field.
-      - Strong proficiency in at least one programming language, such as Java, Python, or C++.
-      - Experience with software development methodologies, such as Agile or Scrum.`, 
+    Ofrecemos excelentes beneficios, oportunidades de crecimiento y desarrollo profesional y un ambiente de trabajo desafiante y dinámico. Si estás buscando un nuevo desafío en el desarrollo de software y tienes experiencia en Azure, .NET, C# y SQL Server, ¡aplica ahora y únete a nosotros en nuestro camino hacia el éxito!!`, 
     salaryRange: {
-        min: 47000,
-        max: 50000,
+        min: 30000,
+        max: 40000,
     },
     hiring: {
         shift: 'Part-Time',
         contract: 'Fixed-Term'
     },
-    offerStatus: false,
-    typeJob: 'Full Remote' ,
-    vacancies: 2,
+    offerStatus: true,
+    typeJob: 'Hybrid' ,
+    vacancies: 1,
     applicants: [],
     keywords: [
       'software engineer',
-      'java',
-      'c++'
+      'SQL',
+      'c++',
+      'azure'
     ]
     },
+    {
+      title: 'Front-End Developer',
+      description: `¡Claro! Aquí tienes una oferta de Front-End Developer con más detalles:
+  
+      Estamos buscando un Front-End Developer con habilidades en HTML, CSS y JavaScript, y experiencia en React. Debe tener habilidades para crear soluciones escalables y trabajar en equipo para asegurar el éxito del proyecto.
+      
+      El candidato ideal tendrá conocimientos en diseño UI/UX, experiencia en metodologías ágiles y en el uso de herramientas de control de versiones como Git. Además, debe tener habilidades de comunicación efectiva y la capacidad de trabajar bajo presión en un ambiente dinámico.
+      
+      Ofrecemos excelentes beneficios, oportunidades de crecimiento y desarrollo profesional y un ambiente de trabajo desafiante y dinámico. Si estás buscando un nuevo desafío en el desarrollo de software y quieres unirte a un equipo de alto rendimiento, ¡aplica ahora y únete a nosotros en nuestro camino hacia el éxito!`, 
+      salaryRange: {
+          min: 22000,
+          max: 25000,
+      },
+      hiring: {
+          shift: 'Rotating',
+          contract: 'Indefinite-Term'
+      },
+      offerStatus: true,
+      typeJob: 'Full Remote' ,
+      vacancies: 2,
+      applicants: [],
+      keywords: [
+        'front end',
+        'angular',
+        'react'
+      ]
+      },
+     {
+      title: 'Full-Stack Developer, junior',
+      description: `Estamos buscando un Full-Stack Developer Junior con conocimientos en tecnologías como JavaScript, React, Node.js y bases de datos relacionales y no relacionales. El candidato ideal deberá ser capaz de desarrollar soluciones escalables y trabajar en equipo.
+
+      Buscamos a alguien que tenga pasión por aprender y mejorar sus habilidades, y que tenga experiencia en metodologías ágiles y en el uso de herramientas de control de versiones como Git.
+      
+      Ofrecemos un ambiente de trabajo desafiante y dinámico, oportunidades de crecimiento y desarrollo profesional, y una compensación competitiva. Si estás buscando un nuevo desafío en el desarrollo de software y quieres unirte a un equipo de alto rendimiento, ¡aplica ahora y únete a nosotros en nuestro camino hacia el éxito!`, 
+      salaryRange: {
+          min: 15000,
+          max: 19000,
+      },
+      hiring: {
+          shift: 'Split Day',
+          contract: 'Training'
+      },
+      offerStatus: true,
+      typeJob: 'Presential' ,
+      vacancies: 5,
+      applicants: [],
+      keywords: [
+        'full stack',
+        'angular',
+        'react',
+        'junior'
+      ]
+      },
+      {
+      title: 'Back-End Developer, junior',
+      description: `Estamos buscando un Back-End Developer Junior con conocimientos en tecnologías como PHP, Symfony y bases de datos relacionales y no relacionales. El candidato ideal deberá ser capaz de desarrollar soluciones escalables y trabajar en equipo.
+
+      Buscamos a alguien que tenga pasión por aprender y mejorar sus habilidades, y que tenga experiencia en metodologías ágiles y en el uso de herramientas de control de versiones como Git.
+      
+      Ofrecemos un ambiente de trabajo desafiante y dinámico, oportunidades de crecimiento y desarrollo profesional, y una compensación competitiva. Si estás buscando un nuevo desafío en el desarrollo de software y quieres unirte a un equipo de alto rendimiento, ¡aplica ahora y únete a nosotros en nuestro camino hacia el éxito!`, 
+      salaryRange: {
+          min: 80000,
+          max: 100000,
+      },
+      hiring: {
+          shift: 'Full-Time',
+          contract: 'Indefinite-Term'
+      },
+      offerStatus: true,
+      typeJob: 'Hybrid' ,
+      vacancies: 1,
+      applicants: [],
+      keywords: [
+        'back end',
+        'python',
+        'node',
+        'junior'
+      ]
+      },
+     {
+      title: 'Software Engineer senior',
+      description: `Descripción del trabajo: Como Software Engineer Senior, serás responsable de diseñar, desarrollar, probar y mantener software de alta calidad. Trabajarás en colaboración con otros ingenieros y especialistas en el área técnica en proyectos emocionantes y desafiantes que tienen un impacto en la empresa y en la vida de las personas.
+
+      Requisitos:
+      
+      Mínimo de 5 años de experiencia en diseño y desarrollo de software de alta calidad
+      Conocimientos profundos de una o más tecnologías de programación, como Java, C++, Python, JavaScript o Ruby
+      Experiencia en el diseño y la arquitectura de sistemas de software escalables y robustos
+      Excelentes habilidades de comunicación y colaboración en equipo
+      Ofrecemos:
+      
+      Salario competitivo
+      Beneficios completos, incluyendo seguro de salud, dental y de visión, plan de jubilación y vacaciones pagadas
+      Oportunidades de aprendizaje y desarrollo profesional
+      Ambiente de trabajo dinámico y colaborativo
+      Oportunidades de crecimiento y avance en la empresa
+      Si estás interesado en esta emocionante oportunidad y cumples con los requisitos, ¡esperamos recibir tu solicitud!`, 
+      salaryRange: {
+          min: 90000,
+          max: 120000,
+      },
+      hiring: {
+          shift: 'Part-Time',
+          contract: 'Fixed-Term'
+      },
+      offerStatus: false,
+      typeJob: 'Full Remote' ,
+      vacancies: 2,
+      applicants: [],
+      keywords: [
+        'software engineer',
+        'java',
+        'c++',
+        'back end',
+        'python',
+        'node',
+        'chuck norris'
+      ]
+      },
 ];
 
 const jobOffersDocuments = jobOffersList.map((jobOffer) => new JobOffer(jobOffer));

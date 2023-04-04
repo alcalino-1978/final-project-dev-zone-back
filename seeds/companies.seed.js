@@ -28,7 +28,7 @@ const companiesList = [
     description:`Inetum es una compañía de IT ágil que proporciona servicios y soluciones digitales y un grupo global que ayuda a compañías e instituciones a aprovechar al máximo el flow digital.\n
     Con su perfil multi-experto, Inetum ofrece a sus clientes una combinación única de proximidad, organización sectorial y soluciones de última generación \n
     Presente en más de 27 países, el Grupo tiene cerca de 27.000 empleados y en 2021 generó unos ingresos de 2.200 millones de euros.`,
-    logo:"https://www.inetum.com/upload/public/styles/small_large_720/public/media/image/2022-09/logo%20inetum.jpg?itok=Bh2LH3Tg" ,
+    logo:"https://www.inetum.com/upload/public/styles/small_large_720/public/media/image/2022-09/logo%20inetum.jpg?itok=Bh2LH3Tg",
     cif: "	A28855260",
     listOffers: [] ,
     numberEmployees:27000,

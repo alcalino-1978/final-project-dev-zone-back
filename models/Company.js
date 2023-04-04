@@ -28,10 +28,10 @@ const companySchema = new Schema(
       type: String,
       required: true,
     },
-    listOffers: {
-      type: [String],
+    listOffers: [{
+      type:  mongoose.Schema.Types.ObjectId, ref: "JobOffer"
       // required: true,
-    },
+    }],
     numberEmployees: {
       type: Number,
     },
