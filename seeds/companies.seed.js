@@ -12,8 +12,10 @@ const companiesList = [
     email:"chema@minsait.com" ,
     password:"1234",
     name:"Minsait" ,
-    description:`Impulsamos la transformación de los negocios y la sociedad mediante soluciones y servicios innovadores, poniendo a las personas en el centro.\n
-    Bienvenidos a la revolución tecnológica más humana.\n
+    description:`Impulsamos la transformación de los negocios y la sociedad mediante soluciones y servicios innovadores, poniendo a las personas en el centro.
+
+    Bienvenidos a la revolución tecnológica más humana.
+
     Somos la huella que dejamos y la huella que queremos dejar.`,
     logo:"https://logos-download.com/wp-content/uploads/2022/01/Minsait_Logo.png" ,
     cif: "E09031188",
@@ -25,8 +27,10 @@ const companiesList = [
     email:"Alberto@inetum.com" ,
     password:"1234",
     name:"inetum" ,
-    description:`Inetum es una compañía de IT ágil que proporciona servicios y soluciones digitales y un grupo global que ayuda a compañías e instituciones a aprovechar al máximo el flow digital.\n
-    Con su perfil multi-experto, Inetum ofrece a sus clientes una combinación única de proximidad, organización sectorial y soluciones de última generación \n
+    description:`Inetum es una compañía de IT ágil que proporciona servicios y soluciones digitales y un grupo global que ayuda a compañías e instituciones a aprovechar al máximo el flow digital.
+
+    Con su perfil multi-experto, Inetum ofrece a sus clientes una combinación única de proximidad, organización sectorial y soluciones de última generación
+    
     Presente en más de 27 países, el Grupo tiene cerca de 27.000 empleados y en 2021 generó unos ingresos de 2.200 millones de euros.`,
     logo:"https://www.inetum.com/upload/public/styles/small_large_720/public/media/image/2022-09/logo%20inetum.jpg?itok=Bh2LH3Tg",
     cif: "	A28855260",
@@ -38,9 +42,9 @@ const companiesList = [
     email:"carlos@altia.com" ,
     password:"1234", 
     name: "ALTIA",
-    description:`Somos una compañía que ofrece servicios de alto valor de tecnologías de la información y consultoría de transformación digital.\n
+    description:`Somos una compañía que ofrece servicios de alto valor de tecnologías de la información y consultoría de transformación digital.
 
-    Gracias al compromiso de nuestros más de 3.200 profesionales, repartidos en más de 20 localizaciones de 7 países, acompañamos como socio tecnológico a más de 900 clientes en todo el mundo.\n
+    Gracias al compromiso de nuestros más de 3.200 profesionales, repartidos en más de 20 localizaciones de 7 países, acompañamos como socio tecnológico a más de 900 clientes en todo el mundo.
     
     Con 28 años de experiencia somos una de las primeras compañías independientes del sector.
     
@@ -63,21 +67,7 @@ const companiesList = [
     listOffers:[] ,
     numberEmployees:28000,
     developers: [],   
-    },  
-    {
-      email:"mario@capgemini.com" ,
-      password:"1234",
-      name:"Capgemini" ,
-      description:`Capgemini colabora con compañías para transformar y administrar su negocio liberando el valor de la tecnología.\n
-      Como socio estratégico para empresas de todo el mundo, hemos aprovechado el valor la tecnología para permitir la transformación empresarial durante más de 50 años.\n
-       Abordamos toda la gama de necesidades comerciales, desde la estrategia y el diseño hasta la gestión de operaciones.\n
-       Para hacer esto, recurrimos a una profunda experiencia en cada sector y un dominio total de la innovación en rápida evolución como el cloud, la inteligencia artificial de datos...`,
-      logo:"https://lespetitesannoncesdemarine.files.wordpress.com/2019/07/capgemini-logo.jpg?w=1200" ,
-      cif: "B08377715",
-      listOffers:[] ,
-      numberEmployees:12000,
-      developers: [],   
-      }  
+    }
   ]
   ;
 // Iterar sobre la lista de empresas y hashear las contraseñas
