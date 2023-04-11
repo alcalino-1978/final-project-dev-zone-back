@@ -48,9 +48,9 @@ router.get("/:id", async (req, res, next) => {
 });
 
 // Post Company
-router.post("/",[fileMiddleware.upload.single('logo'), fileMiddleware.uploadToCloudinary] ,async (req, res, next) => {
+router.post("/",[fileMiddleware.parser.single('image')],async (req, res, next) => {
   const pwdHash = await bcrypt.hash(req.body.password, 10);
-  const cloudinaryUrl = req.file_url ? req.file_url : null;
+  const cloudinaryUrl = req.file.path ? req.file.path : null;
   const {email, password, name, description, logo, cif, listOffers, numberEmployees} = req.body;
   const company = {
     email,
@@ -143,9 +143,9 @@ router.patch('/:id',[isAuth],  async (req, res) => {
 
 
 // PUT Update by ID
-router.put("/:id",[isAuth],[fileMiddleware.upload.single('logo'), fileMiddleware.uploadToCloudinary], async (req, res, next) => {
+router.put("/:id",[isAuth],[fileMiddleware.parser.single('image')], async (req, res, next) => {
   const pwdHash = await bcrypt.hash(req.body.password, 10);
-  const cloudinaryUrl = req.file_url ? req.file_url : null;
+  const cloudinaryUrl = req.file.path ? req.file.path : null;
   const {email, password, name, description, logo, cif, listOffers, numberEmployees} = req.body;
   const companyUpdated = {
     email,
