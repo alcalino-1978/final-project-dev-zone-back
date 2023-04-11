@@ -57,10 +57,10 @@ router.get('/:id', async (req, res, next) => {
 
 
 // Post Creation developer
-router.post('/', [fileMiddleware.upload.single('image'), fileMiddleware.uploadToCloudinary], async (req, res, next) => {
+router.post('/', [fileMiddleware.parser.single('image')], async (req, res, next) => {
   console.log(req.file_url)
   const pwdHash = await bcrypt.hash(req.body.password, 10);
-  const cloudinaryUrl = req.file_url ? req.file_url : null;
+  const cloudinaryUrl = req.file.path ? req.file.path : null;
   const { fullName, age, phoneNumber, email, password, cv,salaryRangeMin, salaryRangeMax, languages, portfolio, experience, hardSkills, softSkills, education, typeJob, movility } = req.body;
   const developer = {
     fullName,
@@ -160,9 +160,9 @@ router.patch('/:id',  async (req, res) => {
 
 // Put Update by ID
 
-router.put("/:id",[isAuth],[fileMiddleware.upload.single('image'), fileMiddleware.uploadToCloudinary], async (req, res, next) => {
+router.put("/:id",[isAuth],[fileMiddleware.parser.single('image')], async (req, res, next) => {
   const pwdHash = await bcrypt.hash(req.body.password, 10);
-  const cloudinaryUrl = req.file_url ? req.file_url : null;
+  const cloudinaryUrl = req.file.path ? req.file.path : null;
   const { fullName, age, phoneNumber, email, password, cv,salaryRangeMin, salaryRangeMax, languages, portfolio, experience, hardSkills, softSkills, education, typeJob, movility } = req.body;
   const developerUpdated = {
     fullName,
