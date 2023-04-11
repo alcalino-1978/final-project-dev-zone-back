@@ -24,7 +24,19 @@ const openiaRoutes = require("./routes/openai.routes");
 const userRoutes = require("./routes/user.routes");
 
 //CORS CONFIG
-app.use(cors());
+const whitelist = ['http://localhost:4200', 'https://final-project-dev-zone-front.vercel.app'];
+
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      callback(null, true)
+    } else {
+      callback(new Error('Not allowed by CORS'))
+    }
+  }
+}
+
+app.use(cors(corsOptions));
 
 app.get("/", (req, res) => {
   res.sendFile(__dirname + "/index.html");
